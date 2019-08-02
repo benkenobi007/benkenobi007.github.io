@@ -80,3 +80,11 @@
 .mySlides:hover{
     font-size: 60px;
 }
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 1000px) {
+    .mySlides{font-size: medium;}
+    .mySlides:hover{
+        font-size: large;
+    }
+}
