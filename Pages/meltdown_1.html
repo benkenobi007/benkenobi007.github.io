@@ -1,7 +1,3 @@
-
-<!--------------------------------------
-    Placeholder file for the basic layout of the site
------------------------->
 <!DOCTYPE html>
 <html>
 
@@ -15,9 +11,9 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-<!--    &lt;!&ndash; Slideshow &ndash;&gt;-->
-<!--    <link rel="stylesheet" href="slideshow.css">-->
+    <link rel="stylesheet" href="../Styles/style.css">
+    <!-- Slideshow -->
+    <!--    <link rel="stylesheet" href="slideshow.css">-->
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -42,7 +38,7 @@
 
         <div class="sidebar-header">
             <!--                <h3>TecH007</h3>-->
-            <img src="images/Title/MyLogo_Cropped.png" class="img-fluid" alt="MyLogo"/>
+            <img src="../images/Title/MyLogo_Cropped.png" class="img-fluid" alt="MyLogo"/>
         </div>
 
         <ul class="list-unstyled components">
@@ -105,7 +101,6 @@
 
             <div class="col-2 sidebarCollapseDiv">
                 <button type="button" id="sidebarCollapse" class="btn btn-secondary">
-<!--                    <i class="material-icons md-light md-48" style="height: 100%">menu</i>-->
                     <i class="fas fa-bars"></i>
                     <!--                            <span>Category</span>-->
                 </button>
@@ -115,13 +110,33 @@
                 <!--                        <h1 class="text-white text-center">-->
                 <!--                            The TecHooT-->
                 <!--                        </h1>-->
-                <img src="images/Title/MyLogo_Cropped_Header.png" id="headerLogo" class="img-fluid" alt="MyLogo"/>
+                <img src="../images/Title/MyLogo_Cropped_Header.png" id="headerLogo" class="img-fluid" alt="MyLogo"/>
             </div>
 
 
             <!--                <h3 class="text-white text-center">Hooting about Tech</h3>-->
         </nav>
 
+        <div class="container-fluid text-center subheader">
+            <i class="material-icons md-light md-24">lock</i>
+            <h2>Systems Security</h2>
+        </div>
+
+        <div class="container-fluid article">
+            <a href="meltdown_1.html" class="row">
+                <div class="thumbnail col-1">
+                    <img src="../images/Thumbnails/meltdown_1_thumb.png" class="img-fluid">
+                </div>
+                <div class="summary col">
+                    <h3>Meltdown - How and Why ?</h3>
+                    <p>This post is a high level overview of Meltdown.
+                        I attempt to explain the nuts and bolts of meltdown without diving into too much technical detail.<br/>
+                        Only a minimal knowledge of computers is required.</p>
+                    <br>
+                    <span style="font-style: italic">Part 1 of a 2 part series</span>
+                </div>
+            </a>
+        </div>
 
     </div>
 </div>

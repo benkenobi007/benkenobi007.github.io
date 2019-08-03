@@ -1,5 +1,5 @@
 /*
-    DEMO STYLE
+    GLOBAL STYLE
 */
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
@@ -13,7 +13,7 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
+    /*color: #999;*/
 }
 
 #pageHeader{
@@ -26,7 +26,7 @@ p {
     border-color: #919191;
     border-width: 5px;
     border-top-style: solid;
-
+    user-select: none;
 }
 a,
 a:hover,
@@ -223,4 +223,27 @@ a.article:hover {
 
 #headerLogo{
     max-width: 100%;
+}
+
+
+/*-----------------------
+Article Thumbnails
+ */
+
+.article-thumb{
+    background-color: #db89fe;
+    padding: 10px;
+    border-color: #454540;
+    border-width: 5px 10px 0 10px;
+    border-style: solid;
+    color: black;
+    transition: background-color 1s;
+}
+
+.summary{
+    margin-bottom: 0;
+}
+
+.article-thumb:hover{
+    background-color: #fd34fe;
 }
