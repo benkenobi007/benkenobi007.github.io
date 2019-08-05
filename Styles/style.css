@@ -18,6 +18,7 @@ p {
 
 #pageHeader{
     margin-bottom: 0;
+    margin-right: 0;
 }
 
 .subheader{
@@ -177,16 +178,6 @@ ul.CTAs a {
     margin-bottom: 5px;
 }
 
-a.download {
-    background: #fff;
-    color: #7386D5;
-}
-
-a.article,
-a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
-}
 
 /* ---------------------------------------------------
     CONTENT STYLE
@@ -246,4 +237,20 @@ Article Thumbnails
 
 .article-thumb:hover{
     background-color: #fd34fe;
+}
+
+.img-container{
+    background-color: white;
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 10px;
+}
+
+.img-caption{
+    background-color: #222222;
+    padding: 5px;
+}
+
+#pageContent a{
+    color: #27b5da;
 }
