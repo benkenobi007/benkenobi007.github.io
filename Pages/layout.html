@@ -156,6 +156,9 @@
             $('.collapse.in').toggleClass('in');
             $('a[aria-expanded=true]').attr('aria-expanded', 'false');
         });
+
+        //make all links in the article open new tab
+        $('.article a').attr('target','_blank');
     });
 </script>
 

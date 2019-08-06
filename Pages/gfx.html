@@ -1,3 +1,7 @@
+
+<!--------------------------------------
+    Placeholder file for the basic layout of the site
+------------------------>
 <!DOCTYPE html>
 <html>
 
@@ -12,8 +16,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../Styles/style.css">
-    <!-- Slideshow -->
-    <link rel="stylesheet" href="../Styles/slideshow.css">
+    <!--    &lt;!&ndash; Slideshow &ndash;&gt;-->
+    <!--    <link rel="stylesheet" href="slideshow.css">-->
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -21,6 +25,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -41,8 +47,8 @@
 
         <ul class="list-unstyled components">
             <!--                <p>Hoots About</p>-->
-            <li class = "active">
-                <a href="#">Home</a>
+            <li>
+                <a href="index.html">Home</a>
             </li>
             <li>
                 <a href="security.html">Security</a>
@@ -59,7 +65,7 @@
                 <!--                        </li>-->
                 <!--                    </ul>-->
             </li>
-            <li>
+            <li class = "active">
                 <a href="gfx.html">Graphics</a>
                 <!--                    <a href="#">About</a>-->
                 <!--                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>-->
@@ -95,10 +101,11 @@
 
     <!-- Page Content  -->
     <div id="pageContent">
-        <nav class = "navbar bg-dark" id="pageHeader">
+        <nav class = "navbar bg-dark row" id="pageHeader">
 
             <div class="col-2 sidebarCollapseDiv">
                 <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+                    <!--                    <i class="material-icons md-light md-48" style="height: 100%">menu</i>-->
                     <i class="fas fa-bars"></i>
                     <!--                            <span>Category</span>-->
                 </button>
@@ -108,7 +115,9 @@
                 <!--                        <h1 class="text-white text-center">-->
                 <!--                            The TecHooT-->
                 <!--                        </h1>-->
-                <img src="../images/Title/MyLogo_Cropped_Header.png" id="headerLogo" class="img-fluid" alt="MyLogo"/>
+                <a href="index.html">
+                    <img src="../images/Title/MyLogo_Cropped_Header.png" id="headerLogo" class="img-fluid" alt="MyLogo"/>
+                </a>
             </div>
 
 
@@ -147,11 +156,14 @@
             $('.collapse.in').toggleClass('in');
             $('a[aria-expanded=true]').attr('aria-expanded', 'false');
         });
+
+        //make all links in the article open new tab
+        $('.article a').attr('target','_blank');
     });
 </script>
 
-<!-- Slideshow JS-->
-<script src="../Scripts/slideshow.js"></script>
+<!--&lt;!&ndash; Slideshow JS&ndash;&gt;-->
+<!--<script src="slideshow.js"></script>-->
 
 </body>
 
