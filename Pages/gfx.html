@@ -1,7 +1,3 @@
-
-<!--------------------------------------
-    Placeholder file for the basic layout of the site
------------------------->
 <!DOCTYPE html>
 <html>
 
@@ -27,6 +23,9 @@
 
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- for gpu icon -->
+    <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
 
 </head>
 
@@ -103,15 +102,15 @@
     <div id="pageContent">
         <nav class = "navbar bg-dark row" id="pageHeader">
 
-            <div class="col-2 sidebarCollapseDiv">
+            <div class="col-1 sidebarCollapseDiv">
                 <button type="button" id="sidebarCollapse" class="btn btn-secondary">
                     <!--                    <i class="material-icons md-light md-48" style="height: 100%">menu</i>-->
                     <i class="fas fa-bars"></i>
                     <!--                            <span>Category</span>-->
                 </button>
             </div>
-
-            <div class="col-10 text-center">
+            <div class="col-1"></div>
+            <div class="col-10 text-center" id="pageTitle">
                 <!--                        <h1 class="text-white text-center">-->
                 <!--                            The TecHooT-->
                 <!--                        </h1>-->
@@ -123,7 +122,11 @@
 
             <!--                <h3 class="text-white text-center">Hooting about Tech</h3>-->
         </nav>
-
+        <div class="container-fluid text-center subheader">
+<!--            <i class="material-icons md-light md-24">gradient</i>-->
+            <span class="iconify" data-icon="mdi-gpu" data-inline="false"></span>
+            <h2>Computer Graphics</h2>
+        </div>
 
     </div>
 </div>

@@ -201,7 +201,8 @@ ul.CTAs a {
 }
 
 #sidebarCollapse{
-    margin: 20px;
+    /*margin: 20px;*/
+    margin: 5px;
     background: #343a40;
     color: white;
 }
@@ -254,3 +255,5 @@ Article Thumbnails
 .article a{
     color: #27b5da;
 }
+
+.iconify { width: 48px; height: 48px; }
