@@ -24,6 +24,8 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Iconify for gpu icon -->
+    <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
 </head>
 
 <body>
@@ -119,7 +121,104 @@
 
             <!--                <h3 class="text-white text-center">Hooting about Tech</h3>-->
         </nav>
+        <div class="container-fluid text-center subheader">
+            <!--            <i class="material-icons md-light md-24">gradient</i>-->
+            <span class="iconify" data-icon="mdi-gpu" data-inline="false"></span>
+            <h2>Computer Graphics</h2>
+        </div>
 
+        <div id="pageBody">
+            <div class="article">
+                <h1>3D Graphics Pipeline Overview</h1>
+                <div class="line"></div>
+                <p>
+                    We are almost constantly manipulating the pixels on our screens. Be it watching movies,
+                    playing video games, or simply reading texts, pixels are continuously switching between
+                    states (colours) as we use our computers.
+                <br>
+                    But how does a computer find out the state of all the pixels for generating an image ?
+                    How does it know that one configuration results in the <a href="../images/Graphics/Gfx_Pipeline/Eiffel_Tower.jpg">
+                    Eiffel Tower</a>,
+                    while another results in the <a href="../images/Graphics/Gfx_Pipeline/Giza_Pyramid.jpg">
+                    Pyramid of Giza</a> ?
+                <br>
+                    In this post, we are going to understand how our GPUs convert real 3D images into 2D images on the screen.
+                    We are going to follow the journey of a 3D image (made of vertices), through various stages of processing,
+                    and conclude with the resulting 2D representation (made of our screens' pixels).
+                </p>
+                <div class="line"></div>
+
+                <h3>How do we talk to the GPU ?</h3>
+                <p>
+                    We feed the 3D scene information to the GPU, consisting of streams of hundreds of vertices.<br>
+                    The CPU is responsible for allocating memory, initializating variables, and the formatting
+                    of data. Once this is done, the data is transferred to the allocated GPU memory
+                    (aka <span style="font-weight: bold">frame buffer</span>).<br>
+                    Once it has all the data in its buffer, the GPU takes over and runs the graphics pipeline,
+                    generating a 2D scene
+                    which is <span style="font-weight: bold">directly sent to the display adapter</span> (not back to
+                    the CPU).
+                    The most popular display adapters are
+                    <a href="https://en.wikipedia.org/wiki/Video_Graphics_Array">VGA</a>,
+                    <a href="https://en.wikipedia.org/wiki/HDMI">HDMI</a>, and
+                    <a href="https://en.wikipedia.org/wiki/Digital_Visual_Interface">DVI</a>.
+                </p>
+                <p>
+                    Apart from this, all graphics APIs(OpenGL, Vulkan, Direct3D, Metal, etc.) have specialized functions
+                    for querying the status of the GPU. They give essential information for setup, debugging and
+                    diagnostics, such as :
+
+                </p>
+                <ul style="font-size: 1.1rem">
+                    <li>Is the GPU active ?</li>
+                    <li>PCI port number</li>
+                    <li>Memory available </li>
+                    <li>Any exceptions encountered, along with a typical "GPU stack" trace</li>
+                </ul>
+                <p>
+                    Now that we have an idea of how to speak to the GPU, let us start examining the actual
+                    graphics pipeline itself.
+                </p>
+                <div class="img-container text-center">
+                    <img src="../images/Graphics/Gfx_Pipeline/pipeline.JPG" alt="graphics-pipeline" class="img-fluid">
+                    <div class="img-caption">
+                        Fig 1. The Standard Graphics Pipeline.
+                        <span style="font-weight: bold">Fixed Function</span> components are fixed by the hardware.
+                        <span style="font-weight: bold">Programmable</span> components can be programmed using shaders.
+                    </div>
+                </div>
+
+                <div class="line"></div>
+                <h1 style="text-align: center"> I. Vertex Generation</h1>
+                <p>
+                    The vertices are placed in an ordered list, and grouped together to form geometric shapes
+                    called <span style="font-weight: bold;">primitives</span>. Primitives can be lines, points triangles,
+                    polygons, etc. Triangles are often the de facto choice for primitives, since they are able to enforce
+                    several useful geometric properties (such as planarity) while maintaining relative simplicity of
+                    only 3 points.
+                    <br>
+                    This stream of vertices (grouped into primitives) is now fed to the graphics pipeline.
+                </p>
+
+                <div class="line"></div>
+                <h1 style="text-align: center"> II. Vertex Processing</h1>
+                <h3>Clip Space Transformation</h3>
+                <p>
+                    The incoming 3D vertices of the form <span style="font-style: italic">(x, y, z)</span> are
+                    transformed into a 4 dimensional <span style="font-weight: bold">clip space</span>. Clip space
+                    coordinates are usually expressed as <span style="font-style: italic">(x, y, z, w)</span>, where w
+                    bounds the values of x, y and z. For example, if w = 2, then the values of x, y, z lie in the
+                    interval <span style="font-family: 'Times New Roman'">[-2, 2]</span>. Hence we get a region of 3D
+                    space in the range [-W, W] in the x, y and z directions.
+                    <br>
+                    By convention, positive X direction is to the right, the positive Y direction is up, and the
+                    positive Z direction is away from the viewer.
+                    <br>
+                    This transformation can be done arbitrarily; most APIs let users program it via
+                    <span style="font-weight: bold">vertex shaders</span>.
+                </p>
+            </div>
+        </div>
 
     </div>
 </div>
