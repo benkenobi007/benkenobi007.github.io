@@ -11,9 +11,9 @@
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="../Styles/style.css">
+        <link rel="stylesheet" href="Styles/style.css">
         <!-- Slideshow -->
-        <link rel="stylesheet" href="../Styles/slideshow.css">
+        <link rel="stylesheet" href="Styles/slideshow.css">
         <!-- Scrollbar Custom CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -36,7 +36,7 @@
 
                 <div class="sidebar-header">
                     <!--                <h3>TecH007</h3>-->
-                    <img src="../images/Title/MyLogo_Cropped.png" class="img-fluid" alt="MyLogo"/>
+                    <img src="images/Title/MyLogo_Cropped.png" class="img-fluid" alt="MyLogo"/>
                 </div>
 
                 <ul class="list-unstyled components">
@@ -45,7 +45,7 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="security.html">Security</a>
+                        <a href="Pages/security.html">Security</a>
                         <!--                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>-->
                         <!--                    <ul class="collapse list-unstyled" id="homeSubmenu">-->
                         <!--                        <li>-->
@@ -60,7 +60,7 @@
                         <!--                    </ul>-->
                     </li>
                     <li>
-                        <a href="gfx.html">Graphics</a>
+                        <a href="Pages/gfx.html">Graphics</a>
                         <!--                    <a href="#">About</a>-->
                         <!--                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>-->
                         <!--                    <ul class="collapse list-unstyled" id="pageSubmenu">-->
@@ -76,7 +76,7 @@
                         <!--                    </ul>-->
                     </li>
                     <li>
-                        <a href="hardware.html">Hardware</a>
+                        <a href="Pages/hardware.html">Hardware</a>
                     </li>
                     <li>
                         <a href="#contact">Contact</a>
@@ -110,7 +110,7 @@
                         <!--                            The TecHooT-->
                         <!--                        </h1>-->
                         <a href="index.html">
-                            <img src="../images/Title/MyLogo_Cropped_Header.png" id="headerLogo" class="img-fluid" alt="MyLogo"/>
+                            <img src="images/Title/MyLogo_Cropped_Header.png" id="headerLogo" class="img-fluid" alt="MyLogo"/>
                         </a>
                     </div>
 
@@ -121,18 +121,30 @@
                 <div id="pageBody">
                     <div class="row text-center">
                         <div class="col-2"></div>
+
+                        <!--
+                        SLIDESHOW IMAGE SIZE : 1920*773.
+                        Use only images of the correct size.
+                        -->
                         <div class="slideshow-container col-8">
 
-                            <a href="meltdown_1.html">
+                            <a href="Pages/RX560X_oc.html">
                                 <div class="mySlides fadeAnimate">
-                                    <img src="../images/Security/Meltdown_1/Meltdown_bg_2.jpg" alt="Meltdown_img" class="slideImg">
+                                    <img src="images/Hardware/RX560X_OC/homescreen_thumb.jpg" alt="RX-560X-pic" class="slideImg">
+                                    <div class="slide-caption">RX 560X Overclocking Guide</div>
+                                </div>
+                            </a>
+
+                            <a href="Pages/meltdown_1.html">
+                                <div class="mySlides fadeAnimate">
+                                    <img src="images/Security/Meltdown_1/Meltdown_bg_2.jpg" alt="Meltdown_img" class="slideImg">
                                     <div class="slide-caption">Meltdown - How and Why</div>
                                 </div>
                             </a>
 
-                            <a href="graphics_pipeline.html">
+                            <a href="Pages/graphics_pipeline.html">
                                 <div class="mySlides fadeAnimate">
-                                    <img src="../images/Graphics/computer-graphics.jpg" alt="OpenGL_Logo" class="slideImg">
+                                    <img src="images/Graphics/computer-graphics.jpg" alt="OpenGL_Logo" class="slideImg">
                                     <div class="slide-caption">Graphics Pipeline Overview</div>
                                 </div>
                             </a>
@@ -156,17 +168,17 @@
                     </div>
                     <div id="categories" class="row text-center">
 
-                        <a href="security.html" class="col category_thumb">
+                        <a href="Pages/security.html" class="col category_thumb">
                             <h4>Systems Security</h4>
-                            <img src="../images/Thumbnails/Home/security_thumb.png" class="rounded" alt="thumb">
+                            <img src="images/Thumbnails/Home/security_thumb.png" class="rounded" alt="thumb">
                         </a>
-                        <a href="gfx.html" class="col category_thumb">
+                        <a href="Pages/gfx.html" class="col category_thumb">
                             <h4>Computer Graphics</h4>
-                            <img src="../images/Thumbnails/Home/graphics_thumb.png" class="rounded" alt="thumb">
+                            <img src="images/Thumbnails/Home/graphics_thumb.png" class="rounded" alt="thumb">
                         </a>
-                        <a class="col category_thumb" href="hardware.html">
+                        <a class="col category_thumb" href="Pages/hardware.html">
                             <h4>Hardware</h4>
-                            <img src="../images/Thumbnails/Home/hardware_thumb.png" class="rounded" alt="thumb">
+                            <img src="images/Thumbnails/Home/hardware_thumb.png" class="rounded" alt="thumb">
                         </a>
 
                     </div>
@@ -246,7 +258,7 @@
         </script>
 
         <!-- Slideshow JS-->
-        <script src="../Scripts/slideshow.js"></script>
+        <script src="Scripts/slideshow.js"></script>
 
     </body>
 
