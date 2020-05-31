@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>3D Graphics pipeline - The TecHooT</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../Styles/style.css">
+    <!--    &lt;!&ndash; Slideshow &ndash;&gt;-->
+    <!--    <link rel="stylesheet" href="slideshow.css">-->
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Iconify for gpu icon -->
+    <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
+</head>
+
+<body>
+
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div id="dismiss">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <!--                <h3>TecH007</h3>-->
+            <img src="../images/Title/MyLogo_Cropped.png" class="img-fluid" alt="MyLogo"/>
+        </div>
+
+        <ul class="list-unstyled components">
+            <!--                <p>Hoots About</p>-->
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="security.html">Security</a>
+                <!--                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>-->
+                <!--                    <ul class="collapse list-unstyled" id="homeSubmenu">-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Home 1</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Home 2</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Home 3</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+            </li>
+            <li class="active">
+                <a href="gfx.html">Graphics</a>
+                <!--                    <a href="#">About</a>-->
+                <!--                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>-->
+                <!--                    <ul class="collapse list-unstyled" id="pageSubmenu">-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Page 1</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Page 2</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Page 3</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+            </li>
+            <li>
+                <a href="hardware.html">Hardware</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+        <!--            <ul class="list-unstyled CTAs">-->
+        <!--                <li>-->
+        <!--                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>-->
+        <!--                </li>-->
+        <!--                <li>-->
+        <!--                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>-->
+        <!--                </li>-->
+        <!--            </ul>-->
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="pageContent">
+        <nav class = "navbar bg-dark row" id="pageHeader">
+
+            <div class="col-1 sidebarCollapseDiv">
+                <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+                    <!--                    <i class="material-icons md-light md-48" style="height: 100%">menu</i>-->
+                    <i class="fas fa-bars"></i>
+                    <!--                            <span>Category</span>-->
+                </button>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-10 text-center" id="pageTitle">
+                <!--                        <h1 class="text-white text-center">-->
+                <!--                            The TecHooT-->
+                <!--                        </h1>-->
+                <a href="../index.html">
+                    <img src="../images/Title/MyLogo_Cropped_Header.png" id="headerLogo" class="img-fluid" alt="MyLogo"/>
+                </a>
+            </div>
+
+
+            <!--                <h3 class="text-white text-center">Hooting about Tech</h3>-->
+        </nav>
+        <div class="container-fluid text-center subheader">
+            <!--            <i class="material-icons md-light md-24">gradient</i>-->
+            <span class="iconify" data-icon="mdi-gpu" data-inline="false"></span>
+            <h2>Computer Graphics</h2>
+        </div>
+
+        <div id="pageBody">
+            <div class="article">
+                <h1>3D Graphics Pipeline Overview</h1>
+                <div class="line"></div>
+                <p>
+                    We are almost constantly manipulating the pixels on our screens. Be it watching movies,
+                    playing video games, or simply reading texts, pixels are continuously switching between
+                    states (colours) as we use our computers.
+                <br>
+                    But how does a computer find out the state of all the pixels for generating an image ?
+                    How does it know that one configuration results in the <a href="../images/Graphics/Gfx_Pipeline/Eiffel_Tower.jpg">
+                    Eiffel Tower</a>,
+                    while another results in the <a href="../images/Graphics/Gfx_Pipeline/Giza_Pyramid.jpg">
+                    Pyramid of Giza</a> ?
+                <br>
+                    In this post, we are going to understand how our GPUs convert real 3D images into 2D images on the screen.
+                    We are going to follow the journey of a 3D image (made of vertices), through various stages of processing,
+                    and conclude with the resulting 2D representation (made of our screens' pixels).
+                </p>
+                <div class="line"></div>
+
+                <h3>How do we talk to the GPU ?</h3>
+                <p>
+                    We feed the 3D scene information to the GPU, consisting of streams of hundreds of vertices.<br>
+                    The CPU is responsible for allocating memory, initializating variables, and the formatting
+                    of data. Once this is done, the data is transferred to the allocated GPU memory
+                    (aka <span style="font-weight: bold">frame buffer</span>).<br>
+                    Once it has all the data in its buffer, the GPU takes over and runs the graphics pipeline,
+                    generating a 2D scene
+                    which is <span style="font-weight: bold">directly sent to the display adapter</span> (not back to
+                    the CPU).
+                    The most popular display adapters are
+                    <a href="https://en.wikipedia.org/wiki/Video_Graphics_Array">VGA</a>,
+                    <a href="https://en.wikipedia.org/wiki/HDMI">HDMI</a>, and
+                    <a href="https://en.wikipedia.org/wiki/Digital_Visual_Interface">DVI</a>.
+                </p>
+                <p>
+                    Apart from this, all graphics APIs(OpenGL, Vulkan, Direct3D, Metal, etc.) have specialized functions
+                    for querying the status of the GPU. They give essential information for setup, debugging and
+                    diagnostics, such as :
+
+                </p>
+                <ul style="font-size: 1.1rem">
+                    <li>Is the GPU active ?</li>
+                    <li>PCI port number</li>
+                    <li>Memory available </li>
+                    <li>Any exceptions encountered, along with a typical "GPU stack" trace</li>
+                </ul>
+                <p>
+                    Now that we have an idea of how to speak to the GPU, let us start examining the actual
+                    graphics pipeline itself.
+                </p>
+                <div class="img-container text-center">
+                    <img src="../images/Graphics/Gfx_Pipeline/pipeline.JPG" alt="graphics-pipeline" class="img-fluid">
+                    <div class="img-caption">
+                        Fig 1. The Standard Graphics Pipeline.
+                        <span style="font-weight: bold">Fixed Function</span> components are fixed by the hardware.
+                        <span style="font-weight: bold">Programmable</span> components can be programmed using shaders.
+                    </div>
+                </div>
+
+                <div class="line"></div>
+                <h1 style="text-align: center"> I. Vertex Generation</h1>
+                <p>
+                    The vertices are placed in an ordered list, and grouped together to form geometric shapes
+                    called <span style="font-weight: bold;">primitives</span>. Primitives can be lines, points triangles,
+                    polygons, etc. Triangles are often the de facto choice for primitives, since they are able to enforce
+                    several useful geometric properties (such as planarity) while maintaining relative simplicity of
+                    only 3 points.
+                    <br>
+                    This stream of vertices (grouped into primitives) is now fed to the graphics pipeline.
+                </p>
+
+                <div class="line"></div>
+                <h1 style="text-align: center"> II. Vertex Processing</h1>
+                <h3>1. Clip Space Transformation</h3>
+                <p>
+                    The incoming 3D vertices of the form <span style="font-style: italic">(x, y, z)</span> are
+                    transformed into a 4 dimensional <span style="font-weight: bold">clip space</span>. Clip space
+                    coordinates are usually expressed as <span style="font-style: italic">(x, y, z, w)</span>, where w
+                    bounds the values of x, y and z. For example, if w = 2, then the values of x, y, z lie in the
+                    interval <span style="font-family: 'Times New Roman'">[-2, 2]</span>. Hence we get a region of 3D
+                    space in the range [-W, W] in the x, y and z directions.
+                    <br>
+                    By convention, positive X direction is to the right, the positive Y direction is up, and the
+                    positive Z direction is away from the viewer.
+                    <br>
+                    This transformation can be done arbitrarily; most APIs let users program it via
+                    <span style="font-weight: bold">vertex shaders</span>.
+                </p>
+                <br>
+                <br>
+                <h3>2. Clipping and culling</h3>
+                <p>
+                    A lot of points in the 3D scene may not be visible in the 2D view. They may be out of the viewing
+                    window, occluded by other points, or too far away from the field of vision.
+                    We can save a lot of processing power by simply discarding these points.
+                    <br>
+                    The primitives partially containing such points are <span style="font-weight: bold">clipped</span>.
+                    For example, if a line is partially outside the view, it is clipped with a new end-point on the boundary
+                    of the clipping volume. Triangles can be broken up into one or more triangles which fall in the view.
+                    <br>
+                    Primitives which are completely out of view are simply <span style="font-weight: bold">culled</span>,
+                    i.e., they are completely discarded.
+                </p>
+                <!-- image comes here -->
+                <div class="img-container text-center">
+                    <img src="../images/Graphics/Gfx_Pipeline/clip_2.JPG" alt="clipping" class="img-fluid">
+                    <div class="img-caption">Fig 2. Clipping of a triangle and division into sub-triangles</div>
+                </div>
+
+                <p>
+                    In Fig. 2, the triangle ABC is partially out of view. So, it is split into 4 sub-triangles T1, T2, T3,
+                    and T4. T1, T2, and T3 are within the viewport and hence they are retained. T4 on the other hand, is
+                    completely out of the viewport and is culled. Finally, we have a clipped portion of ABC (shaded) displayed.
+                </p>
+
+                <div class="line"></div>
+                <h1 style="text-align: center"> III. Rasterization</h1>
+
+
+                <div class="img-container text-center">
+                    <img src="../images/Graphics/Gfx_Pipeline/Rasterization.jpg" alt="rasterization" class="img-fluid">
+                    <div class="img-caption">Fig 3. Rasterization and Fragment shading</div>
+                </div>
+
+                <h3>1. Fragment Generation</h3>
+                <p>
+                    Rasterization involves the mapping of the clipped primitives onto the 2D screen. This is done by means of
+                    a suitable interpolation algorithm. The algorithm uses some heuristics (such as area covered) to determined
+                    which pixels are "covered" by the primitive.
+                    This pixel-cover is called a <span style="font-weight: bold">fragment</span>.
+                </p>
+                <br>
+                <br>
+                <h3>2. Fragment Processing (Shading)</h3>
+                <p>
+                    The fragments have a default depth information assigned in clip space. However, they do not have
+                    any associated colour information.
+                    This colouring/shading has to be specified by the user via a <span style="font-weight: bold">fragment shader</span>.
+                    This step is arbitrary and the user is given a lot of flexibility to decide the shades and styles of colours.
+                </p>
+                <div class="quick-note">
+                    <span style="font-weight: bold; font-size: 1.3rem;">Note on Parallelization</span>
+                    <br>
+                    The pixels in a fragment from a triangle can be processed independently as there is
+                    no chance of overlapping. These can be split across multiple GPU cores and the results
+                    combined to get the final shaded fragment.
+                    <br>
+                    However, since 2 different fragments may overlap, we have to process them sequentially,
+                    else the resulting colour will be changed. This is important when we come to
+                    <a href="#colBlend" style="color: #00ff43;">colour blending</a>.
+                </div>
+
+                <div class="line"></div>
+                <h1 style="text-align: center"> IV. Pixel Operations</h1>
+                <p>
+                    Now that we have the shaded fragments, it is simply a matter of writing them to the screen. The only caveat
+                    is when fragments overlap. How do we determine the colour of pixels covered by multiple fragments ?
+                </p>
+                <h3>1. Occlusion Culling</h3>
+                <p>
+                    Similar to clipping and culling of primitives, we cull useless pixels which don't contribute to the scene.
+                    We have several tests that are conducted to achieve this. 3 important tests are:
+                </p>
+                <ul style="font-size: 1.1rem">
+                    <li>
+                        <span style="font-weight: bold">Ownership Test</span>:
+                        Fails if the pixel is out of the current view of the window, if, for example it is hidden by another window.
+                        Note that the pixel is in the screen view here, but it is not visible as another window
+                        (from another application) covers it.
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Scissor Test</span>:
+                        Fails if pixel lies outside a specified rectangle.
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Depth Test</span>:
+                        Fails if a user specified condition is not satisfied by the pixel depth.
+                    </li>
+                </ul>
+                <p>
+                    Failure in any of the tests leads to culling of the pixels.
+                </p>
+                <br>
+                <br>
+
+                <h3 id="colBlend">2. Colour Blending</h3>
+                <p>
+                    A given pixel starts with no colour. Then, each fragment covering it is taken in sequence, and the
+                    colours are blended sequentially. Blending also involves several logical operations, such as calculation
+                    of the extent to which the next fragment will affect the current colour, bitwise manipulation of depth,
+                    determination of shadow effects, and so on.
+                </p>
+                <p>
+                    The calculated colour values for each pixel is finally written onto a buffer, and the screen is refreshed
+                    with this updated buffer.
+                </p>
+
+                <div class="img-container text-center">
+                    <img src="../images/Graphics/Gfx_Pipeline/Pixel_ops.JPG" alt="pixel-processing" class="img-fluid">
+                    <div class="img-caption">Fig 4. Blending and Fragment Writing</div>
+                </div>
+
+                <div class="line"></div>
+                <h1 style="text-align: center">Summary</h1>
+                <p>
+                    The journey of the pixel is now complete, having started with the 3 dimensional vertex information,
+                    the geometric primitives, their fragments, and finally shaded pixels !
+                </p>
+                <div class="img-container text-center">
+                    <img src="../images/Graphics/Gfx_Pipeline/summary.JPG" alt="summary-pic" class="img-fluid">
+                    <div class="img-caption">Fig 5. Modern 3D Graphics Pipeline</div>
+                </div>
+
+                <div class="line"></div>
+                <h3>Conclusion</h3>
+                <p>
+                    This pipeline, commonly known as the <span style="font-weight: bold">rasterization pipeline</span>,
+                    is the standard followed almost universally by modern GPUs. However it needn't be implemented exactly
+                    as specified. Different APIs have different permutations and combinations of the stages. For example,
+                    certain APIs allow pixel culling to be done prior to fragment processing, saving performance.
+                </p>
+                <p>
+                    The oldest (and most widely supported) API is <a href="https://www.opengl.org/">OpenGL</a>.
+                    Developed and open sourced by the Khronos group, OpenGL is the simplest (and dumbest) graphics API
+                    out there. It is a must for anyone getting started with Graphics Programming and is always covered
+                    in undergrad CG courses.
+                    <br>
+                    OpenGL is slowly being replaced by <a href="https://www.khronos.org/vulkan/">Vulkan</a>,
+                    a new API with much better support for parallelism and better performance. Vulkan is open source
+                    and a direct competitor to Microsoft's closed source
+                    <a href="https://en.wikipedia.org/wiki/DirectX">DirectX 12</a>.
+                </p>
+                <p>
+                    Off late, there has been a lot of buzz around <span style="font-weight: bold">ray-tracing</span>.
+                    The mechanisms of Ray tracing are completely different from those of Rasterization, so the ray tracing
+                    pipeline is completely different. However, some aspects such as vertex processing and clipping remain
+                    in the pipeline.
+                </p>
+
+                <div class="line"></div>
+                <h3>References</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview">
+                            <span style="font-weight: bold; ">The OpenGL rendering pipeline</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cs.cmu.edu/afs/cs/academic/class/15462-f11/www/lec_slides/lec19.pdf">
+                            <span style="font-weight: bold; ">How a GPU Works</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://paroj.github.io/gltut/Basics/Intro%20Graphics%20and%20Rendering.html">
+                            <span style="font-weight: bold; ">Learn Modern 3D Graphics Programming</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.pcmag.com/encyclopedia/term/43933/graphics-pipeline">
+                            <span style="font-weight: bold;">PCMag: Graphics Pipeline</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://wwwx.cs.unc.edu/~rademach/xroads-RT/RTarticle.html">
+                            <span style="font-weight: bold;">An introduction to Ray Tracing</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="line"></div>
+            <div id="contact">
+                <h2>Contact</h2>
+                <p>
+                    Feel free to contact me by raising an issue on the
+                    <a href="https://github.com/benkenobi007/benkenobi007.github.io/issues"
+                       style="color: #27b5da;"
+                    >
+                        github repo
+                    </a>.
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="overlay"></div>
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<!-- jQuery Custom Scroller CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        $('#dismiss, .overlay').on('click', function () {
+            $('#sidebar').removeClass('active');
+            $('.overlay').removeClass('active');
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').addClass('active');
+            $('.overlay').addClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+
+        //make all links in the article open new tab
+        $('.article a').attr('target','_blank');
+
+    });
+</script>
+
+<!--&lt;!&ndash; Slideshow JS&ndash;&gt;-->
+<!--<script src="slideshow.js"></script>-->
+
+</body>
+
+</html>

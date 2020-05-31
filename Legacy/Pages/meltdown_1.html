@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Meltdown Part 1 - The TecHooT</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../Styles/style.css">
+    <!-- Slideshow -->
+    <!--    <link rel="stylesheet" href="slideshow.css">-->
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div id="dismiss">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <!--                <h3>TecH007</h3>-->
+            <img src="../images/Title/MyLogo_Cropped.png" class="img-fluid" alt="MyLogo"/>
+        </div>
+
+        <ul class="list-unstyled components">
+            <!--                <p>Hoots About</p>-->
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li class = "active">
+                <a href="security.html">Security</a>
+                <!--                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>-->
+                <!--                    <ul class="collapse list-unstyled" id="homeSubmenu">-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Home 1</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Home 2</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Home 3</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+            </li>
+            <li>
+                <a href="gfx.html">Graphics</a>
+                <!--                    <a href="#">About</a>-->
+                <!--                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>-->
+                <!--                    <ul class="collapse list-unstyled" id="pageSubmenu">-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Page 1</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Page 2</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Page 3</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+            </li>
+            <li>
+                <a href="hardware.html">Hardware</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+        <!--            <ul class="list-unstyled CTAs">-->
+        <!--                <li>-->
+        <!--                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>-->
+        <!--                </li>-->
+        <!--                <li>-->
+        <!--                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>-->
+        <!--                </li>-->
+        <!--            </ul>-->
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="pageContent">
+        <nav class = "navbar bg-dark row" id="pageHeader">
+
+            <div class="col-1 sidebarCollapseDiv">
+                <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+                    <!--                    <i class="material-icons md-light md-48" style="height: 100%">menu</i>-->
+                    <i class="fas fa-bars"></i>
+                    <!--                            <span>Category</span>-->
+                </button>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-10 text-center" id="pageTitle">
+                <!--                        <h1 class="text-white text-center">-->
+                <!--                            The TecHooT-->
+                <!--                        </h1>-->
+                <a href="../index.html">
+                    <img src="../images/Title/MyLogo_Cropped_Header.png" id="headerLogo" class="img-fluid" alt="MyLogo"/>
+                </a>
+            </div>
+
+
+            <!--                <h3 class="text-white text-center">Hooting about Tech</h3>-->
+        </nav>
+
+        <div class="container-fluid text-center subheader">
+            <i class="material-icons md-light md-24">lock</i>
+            <h2>Systems Security</h2>
+        </div>
+
+        <div id="pageBody">
+             <div class="article">
+                <h1>Meltdown - How and Why</h1>
+                <div class="line"></div>
+                <p>
+                    Let us start by exploring the key concepts needed to understand meltdown:
+                </p>
+                    <ul>
+                        <li>Out of Order/ Speculative execution</li>
+                        <li>Virtual Memory and memory mapping</li>
+                        <li>Memory Protection</li>
+                    </ul>
+                <p>
+                    We will then put all of them together and understand how Meltdown works.
+                </p>
+                <div class="line"></div>
+
+                <h3>Part 1 : Out of Order/ Speculative Execution</h3>
+                <p>Whenever we run a program, it is the norm to expect that the CPU executes the instructions line by line.
+                    Indeed, the entire field of computer software relies on this simplifying assumption of in-order execution by the CPU.
+                </p>
+                <p>From the perspective of the CPU though, this would result in an incredible waste of power and computation.</p>
+                <p>For example, let us say we want to bake a cake and prepare a salad.
+                    If we were to follow in-order execution, we would first have to wait for the cake to be baked, before we could even start collecting ingredients for the salad !
+                </p>
+
+                <div class="img-container text-center">
+                    <img src="../images/Security/Meltdown_1/In_order_cropped.png" alt="in-order-exec" class="img-fluid">
+                    <div class="img-caption">Fig 1. In-Order Execution</div>
+                </div>
+                <p>
+                    In Fig. 1, we can see that there are 4 steps needed to make the cake and salad.
+                </p>
+                <ol>
+                    <li>Prepare the cake batter</li>
+                    <li>Place the cake for baking</li>
+                    <li>Wait (upto an hour !!) for the cake to finish baking</li>
+                    <li>Prepare the salad</li>
+                </ol>
+                <p>
+                    Isn't it a gross waste of time to sit twiddling our thumbs until the cake is baked ?<br>
+
+                    Wouldn't we be able to make the salad while waiting for the cake to get baked ?<br>
+                    Of course we would ! The key idea is that
+                    <span style="font-weight: bold">the salad does not depend on the cake</span> in any manner whatsoever.
+                </p>
+                <p>
+                    Let us now re-attempt the same excercise, but with Out of Order execution.
+                </p>
+                <div class="img-container text-center">
+                    <img src="../images/Security/Meltdown_1/out_order.png" alt="out-of-order-exec" class="img-fluid">
+                    <div class="img-caption">Fig 2. Out-of-Order Execution</div>
+                </div>
+
+                <p>
+                    From the Fig. 2, it becomes apparent that we are saving the last two steps
+                    by preparing the salad alongside baking the cake.<br>
+                </p>
+                <p>
+                    Coming back to the world of CPUs, let us replace the baking by a memory load, and the preparation of salad
+                    as an ALU operation.<br>
+                    Hence, the CPU begins executing arithmetic operations, even as it waits for some
+                    <span style="font-weight: bold">unrelated</span> data to be loaded from the memory.
+                </p>
+                <p>Out of order execution has become a standard feature on all modern CPUs to maximize performance.</p>
+
+                <div class="line"></div>
+
+                <h3>Part 2 : Virtual Memory and Memory Mapping (Linux)</h3>
+                <p>
+                    Let us now look at how memory is mapped by the Linux Kernel.<br>
+                    Any program in execution is called a <span style="font-weight: bold">process</span>.
+                    <br>
+                    For example, instances of Firefox, Notepad, File Explorer, etc. are all processes.
+                </p>
+                <p>
+                    Each process has its own set of memory assigned by the kernel.
+                    For obvious reasons, one process should not be able to figure out
+                    the location/content of memory belonging to another process. <br>
+                    To enforce this, we have "Virtual Memory" for each process. The kernel
+                    assigns each process its own exclusive address space.<br>
+                    Virtual memory serves several purposes, such as simplifying I/O, memory accesses, etc. which are
+                    beyond the scope of this post.<br>
+                </p>
+                <p>
+                    The component of virtual memory that concerns us is the <span style="font-weight: bold">virtual address space (VAS)</span>.
+                    <br>
+                    The virtual address space of a process is the set of virtual memory addresses assigned by the kernel.
+                    The address space for each process is private and cannot be accessed by other processes.
+                </p>
+                <p>
+                    Importantly, the process is only allowed to use a portion of its VAS. This is because the entire Kernel memory is mapped
+                    by the kernel in the remaining VAS to reduce access time to other resources (disk I/O, system call APIs, etc.).<br>
+                </p>
+                <div class="img-container text-center">
+                    <img src="../images/Security/Meltdown_1/VAS.jpg" alt="Virtual-address-space" class="img-fluid">
+                    <div class="img-caption">Fig 3. Typical Virtual Address Space of a process in Linux</div>
+                </div>
+                <p>
+                    In Fig. 3, the process is allowed to use addresses in the range 0-3 GB.
+                    The kernel address space is mapped in the remainder of the memory.<br>
+
+                </p>
+                <p>
+                    You can think of this as getting your own cubicle, which separated from your colleague's cubicle, but your
+                    boss can access all of the cubicles.
+                    You and your colleagues are the user space processes with your own virtual memory mappings to the company
+                    data, while your employer is the all encompassing Kernel who can see everything.
+                </p>
+                <p>
+                    The kernel is required to ensure that the process is unable to access any of the protected (kernel space)
+                    addresses.
+                </p>
+                <p>
+                    But how does the kernel do this ?<br>
+                    This brings us to the next part - Memory Protection Mechanisms.
+                </p>
+
+                <div class="line"></div>
+
+                <h3>Part 3 : Memory Protection</h3>
+                <p>
+                    As we've already seen, the Kernel's entire address space (and consequently the entire system memory) is dutifully
+                    mapped out in each process' VAS, and we need to ensure that the process can't access anything other than the
+                    allowed addresses.
+                </p>
+                <p>
+                    The protected addresses marked PROTECTED by the Kernel.
+                    Attempting to access them leads to an interrupt generated by the CPU (commonly called a
+                    <a href="https://en.wikipedia.org/wiki/Page_fault">Page Fault</a>).
+                    <br>
+                    Those experienced in C would have definitely come across this in the form of the infamous
+                    <span style="font-weight: bold;font-style: oblique">SIG-SEGV</span>
+                    (<span style="font-style: oblique">"segmentation fault : core dumped"</span> ring any bells ?)
+                </p>
+                <p>
+                    The kernel intercepts this interrupt and generates an exception for the user-space application attempting
+                    read/write access.
+                </p>
+
+                <div class="line"></div>
+
+                <h3>Part 4 : Putting it all Together</h3>
+                <p>
+                    We have seen that an error is generated by the CPU for an illegal memory access. However, the error is
+                    <span style="font-weight: bold">not immediately generated</span> when the exception occurs in
+                    <span style="font-weight: bold">out of order execution</span>, since the exception caused by the protection check
+                    is buffered before being output (for details, see
+                    <a href="https://www.youtube.com/watch?v=KD8ZiHpbqkk">Speculative Execution</a>).
+                    <br>
+                    After the out of order execution completes, the CPU outputs the buffered result (generates an interrupt),
+                    and as before, the kernel generates an exception.
+                </p>
+                <p>
+                    <span style="font-weight: bold">Meltdown</span> occurs when the CPU leaks data of protected locations
+                    during out of order execution.<br>
+                    If the result of a load from protected memory is temporarily brought into the CPU cache during the buffering period,
+                    it is possible to determine the value at that location, and hence "meltdown" the kernel's memory protection.<br>
+
+                </p>
+                <p>
+                    For example, let us consider a (horribly inefficient) program<br>
+                    <ol style="border: 2px white solid; background-color: #222222">
+                        <li> Repeat 1000 times:
+                            <ol>
+                                <li> Load a</li>
+                                <li> a = a+10</li>
+                                <li> Write a</li>
+                            </ol>
+                        </li>
+                        <li style="color: red"> Load the data at #ffff0 into b</li>
+                        <li style="color: red"> b = b+10</li>
+                    </ol>
+                </p>
+                <p>
+                    In instruction 1, we have 2 memory accesses (a load and a store, assumed to be legal),
+                    hence the CPU can remain idle until they complete.<br>
+                    However, since it supports out of order execution, it goes ahead and starts executing instruction 2.<br>
+                </p>
+                <p>
+                    Instruction 2 accesses a protected address, generating a page fault speculatively and storing it in the buffer.<br>
+                    The response to this speculative page fault differentiates CPUs affected by meltdown
+                    and those that are not.<br>
+                    <span style="font-weight: bold">Vulnerable CPUs</span> load the value from the location into b.<br>
+                    <span style="font-weight: bold">Meltdown-safe CPUs</span>, on the other hand, either load garbage or zero into b.
+                </p>
+                <p>
+                    Instruction 3 pushes b into the CPU cache. If the CPU is vulnerable, then the protected data
+                    is now in the CPU cache.<br>
+                    It is now very easy to perform a side channel attack and gain access to the protected data.<br>
+                    The details of side channel attacks are beyond the scope of this post. I will cover them in part 2.
+                </p>
+
+                <div class="line"></div>
+
+                <h3>Conclusion</h3>
+                <p>
+                    That brings us to the end of this post. I hope I have been able to give a clear understanding of
+                    the high level mechanics of meltdown.<br>
+                    I have skimmed over the actual implementation of meltdown, something I plan to cover in Part 2.<br>
+                    I have also skimmed over the specifics of out of order execution and speculation. Relevant links are
+                    in the references<br>
+                </p>
+
+                <div class="line"></div>
+
+                <h3>References</h3>
+                <ul>
+                    <li>
+                        <a href="https://meltdownattack.com/meltdown.pdf">
+                            <span style="font-weight: bold; ">The Meltdown Attack paper</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://eprint.iacr.org/2013/448.pdf">
+                            <span style="font-weight: bold; ">Flush + Reload (timing attack on cache)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.stuffedcow.net/2018/05/meltdown-microarchitecture/">
+                            <span style="font-weight: bold; ">H. Wong's experiments on meltdown</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cc.gatech.edu/~milos/Teaching/CS6290F07/4_Tomasulo.pdf">
+                            <span style="font-weight: bold; ">Dynamic Scheduling - Tomasulo's Approach</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.eecs.yorku.ca/course_archive/2006-07/F/4201/ILP4_Spec.pdf">
+                            <span style="font-weight: bold; ">Hardware based Speculation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tldp.org/LDP/sag/html/memory-management.html">
+                            <span style="font-weight: bold; ">Linux System Administrators Guide, Chapter 6</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.kernel.org/doc/html/latest/admin-guide/mm/index.html">
+                            <span style="font-weight: bold; ">Linux Kernel documentation - Memory Management</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="line"></div>
+            </div>
+
+            <div id="contact">
+                <h2>Contact</h2>
+                <p>
+                    Feel free to contact me by raising an issue on the
+                    <a href="https://github.com/benkenobi007/benkenobi007.github.io/issues"
+                       style="color: #27b5da;"
+                    >
+                        github repo
+                    </a>.
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="overlay"></div>
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<!-- jQuery Custom Scroller CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        $('#dismiss, .overlay').on('click', function () {
+            $('#sidebar').removeClass('active');
+            $('.overlay').removeClass('active');
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').addClass('active');
+            $('.overlay').addClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+
+        //make all links in the article open new tab
+        $('.article a').attr('target','_blank');
+    });
+</script>
+
+<!--&lt;!&ndash; Slideshow JS&ndash;&gt;-->
+<!--<script src="slideshow.js"></script>-->
+
+</body>
+
+</html>
