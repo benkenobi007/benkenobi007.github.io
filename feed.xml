@@ -5,9 +5,19 @@
     <description>The Techoot (or TecH007) is a blog about computer systems mainly targeted at those with little to no prior technical knowledge.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 31 May 2020 20:33:17 +0530</pubDate>
-    <lastBuildDate>Sun, 31 May 2020 20:33:17 +0530</lastBuildDate>
+    <pubDate>Tue, 28 Jul 2020 21:28:07 +0530</pubDate>
+    <lastBuildDate>Tue, 28 Jul 2020 21:28:07 +0530</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Graphics Pipeline Overview</title>
+        <description>&lt;p&gt;We are almost constantly manipulating the pixels on our screens. Be it watching movies, playing video games, or simply reading texts, pixels are continuously switching between millions of states (colours) every second as we use our computers.&lt;/p&gt; &lt;p&gt;But how does a computer find out the state of all the pixels for generating an image ? How does it know that one configuration results in the &lt;a href=&quot;/assets/img/Gfx_Pipeline/Eiffel_Tower.jpg&quot;&gt;Eiffel Tower&lt;/a&gt; while another results in the &lt;a href=&quot;/assets/img/Gfx_Pipeline/Giza_Pyramid.jpg&quot;&gt;Pyramid of Giza&lt;/a&gt; ?&lt;/p&gt; &lt;p&gt;In this post, we are going to understand how our GPUs convert 3D images/ scenes into 2D images on the screen. We...</description>
+        <pubDate>Sat, 17 Aug 2019 22:30:49 +0530</pubDate>
+        <link>/Graphics-Pipeline-Overview/</link>
+        <guid isPermaLink="true">/Graphics-Pipeline-Overview/</guid>
+        
+        <category>graphics</category>
+      </item>
     
       <item>
         <title>Meltdown - How and Why</title>

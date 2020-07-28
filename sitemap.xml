@@ -195,6 +195,13 @@
     
     
         <url>
+            <loc>/Graphics-Pipeline-Overview/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2019-08-17</lastmod>
+        </url>
+    
+        <url>
             <loc>/meltdown-how-and-why/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
