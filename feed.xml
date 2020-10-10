@@ -5,9 +5,19 @@
     <description>The Techoot (or TecH007) is a blog about computer systems mainly targeted at those with little to no prior technical knowledge.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Jul 2020 21:28:07 +0530</pubDate>
-    <lastBuildDate>Tue, 28 Jul 2020 21:28:07 +0530</lastBuildDate>
+    <pubDate>Sat, 10 Oct 2020 06:14:43 +0530</pubDate>
+    <lastBuildDate>Sat, 10 Oct 2020 06:14:43 +0530</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>RX 560X Overclocking Guide</title>
+        <description>&lt;div style=&quot;background-color: #ffbf00; border-style: double; border-width: 20px; &quot;&gt; &lt;h3&gt;Before We Begin&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;Overclocking, undervolting, or tweaking any other GPU settings will &lt;span style=&quot;color: red; font-weight: bold&quot;&gt;void the warranty&lt;/span&gt; .&lt;br /&gt; Remember to disable Wattman and uninstall Afterburner before visiting the service centre !&lt;/li&gt; &lt;li&gt;Avoid increasing the voltage and the power limit, even by small amounts.&lt;br /&gt; Since laptops are optimized for power efficiency, chances are the motherboard won't be able to sustain the supply and may get damaged.&lt;/li&gt; &lt;li&gt;This guide minimizes the voltage and maximizes the clock speed.&lt;br /&gt; Note that better results may be obtained simply by increasing the...</description>
+        <pubDate>Mon, 14 Oct 2019 03:45:49 +0530</pubDate>
+        <link>/RX-560X-Overclocking-Guide/</link>
+        <guid isPermaLink="true">/RX-560X-Overclocking-Guide/</guid>
+        
+        <category>hardware</category>
+      </item>
     
       <item>
         <title>Graphics Pipeline Overview</title>

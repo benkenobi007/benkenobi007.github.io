@@ -17,24 +17,24 @@
     
     
 
-    <title>Why books should be your priority? | TecHooT</title>
-    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+    <title>RX 560X Overclocking Guide | TecHooT</title>
+    <meta name="description" content="The AMD Radeon &trade; RX 560X GPU has become a very popular choice for budget gaming laptops, including the Acer Nitro series, the Asus TUF series, and the ...">
     
-        <meta name="keywords" content="books, read">
+        <meta name="keywords" content="">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Why books should be your priority? | TecHooT">
-    <meta name="twitter:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
-    <meta property="twitter:image:src" content="https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559822138/theme9_v273a9.jpg">
+    <meta name="twitter:title" content="RX 560X Overclocking Guide | TecHooT">
+    <meta name="twitter:description" content="The AMD Radeon &trade; RX 560X GPU has become a very popular choice for budget gaming laptops, including the Acer Nitro series, the Asus TUF series, and the ...">
+    <meta property="twitter:image:src" content="/assets/img/RX560X_OC/homescreen_thumb.jpg">
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="/why-books-should-be-your-priority/">
-    <meta property="og:title" content="Why books should be your priority? | TecHooT">
-    <meta property="og:image" content="https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559822138/theme9_v273a9.jpg">
-    <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+    <meta property="og:url" content="/RX-560X-Overclocking-Guide/">
+    <meta property="og:title" content="RX 560X Overclocking Guide | TecHooT">
+    <meta property="og:image" content="/assets/img/RX560X_OC/homescreen_thumb.jpg">
+    <meta property="og:description" content="The AMD Radeon &trade; RX 560X GPU has become a very popular choice for budget gaming laptops, including the Acer Nitro series, the Asus TUF series, and the ...">
     <meta property="og:site_name" content="TecHooT">
 
     <!-- Favicon -->
@@ -66,7 +66,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="/why-books-should-be-your-priority/">
+    <link rel="canonical" href="/RX-560X-Overclocking-Guide/">
     <link rel="alternate" type="application/rss+xml" title="TecHooT" href="/feed.xml" />
 
     <!-- Include extra styles -->
@@ -330,22 +330,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2018-11-22T17:56:40+05:30">
+                        <time class="date" datetime="2019-10-14T03:45:49+05:30">
                             
 
 
-November 22, 2018
+October 14, 2019
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>3 min to read</span>
+                    <span>13 min to read</span>
                 </p>
-                <h1 class="post-title">Why books should be your priority?</h1>
-                <p class="post-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h1 class="post-title">RX 560X Overclocking Guide</h1>
+                <p class="post-subtitle"></p>
 
                 
-                    <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559822138/theme9_v273a9.jpg" alt="Featured image" class="post-cover">
+                    <img src="/assets/img/RX560X_OC/homescreen_thumb.jpg" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -355,132 +355,464 @@ November 22, 2018
                 <!-- Add your table of contents here -->
 
 
-                <p>Cas sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                <div style="background-color: #ffbf00; border-style: double; border-width: 20px; ">
+<h3>Before We Begin</h3>
+                <ul>
+                    <li>Overclocking, undervolting, or tweaking any other GPU settings will
+                        <span style="color: red; font-weight: bold">void the warranty</span> .<br />
+                        Remember to disable Wattman and uninstall Afterburner before visiting the service centre !</li>
+                    <li>Avoid increasing the voltage and the power limit, even by small amounts.<br />
+                        Since laptops are optimized for power efficiency, chances are the motherboard
+                        won't be able to sustain the supply and may get damaged.</li>
+                    <li>This guide minimizes the voltage and maximizes the clock speed.<br />
+                        Note that better results may be obtained simply by increasing the clock speed and the voltage,
+                        but the risks outweigh the benefits.
+                    </li>
+                </ul>
+</div>
 
-<blockquote>
-  <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-</blockquote>
-
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-
-<!--page-->
-
-<h2 id="inline-html-elements">Inline HTML elements</h2>
-
-<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-
+<h3>Prerequisites</h3>
 <ul>
-  <li><strong>To bold text</strong>, use <code class="highlighter-rouge">&lt;strong&gt;</code>.</li>
-  <li><em>To italicize text</em>, use <code class="highlighter-rouge">&lt;em&gt;</code>.</li>
-  <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="highlighter-rouge">title</code> attribute for the full phrase.</li>
-  <li>Citations, like <cite>— Thiago Rossener</cite>, should use <code class="highlighter-rouge">&lt;cite&gt;</code>.</li>
-  <li><del>Deleted</del> text should use <code class="highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="highlighter-rouge">&lt;ins&gt;</code>.</li>
-  <li>Superscript <sup>text</sup> uses <code class="highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="highlighter-rouge">&lt;sub&gt;</code>.</li>
+    <li>
+        The latest <a href="https://www.amd.com/en/support">Radeon Adrenalin Driver</a>.
+        Version &gt;= 19.3.1.
+    </li>
+    <li>
+        <a href="https://www.msi.com/page/afterburner">MSI Afterburner</a>,
+        for enabling Wattman and verifying the overclock.
+    </li>
+    <li>
+        <a href="https://benchmarks.ul.com/3dmark">3DMark</a> benchmark suite,
+        for measuring the performance gain.<br />
+        Download the basic edition and install the <span style="font-weight: bold">FireStrike benchmark</span>.
+    </li>
+    <li>
+        Excel, notepad, or any other method to note down the results.
+    </li>
+    <li>
+        Patience. In sufficiently high quantities :)
+    </li>
 </ul>
 
-<p>Most of these elements are styled by browsers with few modifications on our part.</p>
+<h3>Step 1: Enable Wattman</h3>
+<p>
+    Wattman is AMD's utility for tuning various parameteres of the GPU, including GPU clocks,
+    GPU voltages, memory clocks, GPU fan-speeds, etc. It is available as part of the Adrenalin driver
+    for desktop GPUs. However, it is disabled for mobile (laptop) GPUs by default due to the risk of damage
+    to the laptop.
+</p>
+<p>
+    To enable Wattman, open up MSI Aferburner and ensure that the GPU listed is the RX 560X.
+    The default clock speeds of the GPU and the vRAM should be visible.
+</p>
 
-<!--page-->
+<p><img src="/assets/img/RX560X_OC/Afterburner_home.jpg" alt="afterburner-home-screen" title="Fig 1. MSI Afterburner" /></p>
 
-<h1 id="heading-1">Heading 1</h1>
-<h2 id="heading-2">Heading 2</h2>
-<h3 id="heading-3">Heading 3</h3>
-<h4 id="heading-4">Heading 4</h4>
-
-<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-<h2 id="code">Code</h2>
-
-<p>Cum sociis natoque penatibus et magnis dis <code class="highlighter-rouge">code element</code> montes, nascetur ridiculus mus.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example can be run directly in your JavaScript console</span>
-
-<span class="c1">// Create a function that takes two arguments and returns the sum of those arguments</span>
-<span class="kd">var</span> <span class="nx">adder</span> <span class="o">~|=|</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">return a + b</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="c1">// Call the function</span>
-<span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-<span class="c1">// &gt; 8</span>
-</code></pre></div></div>
-
-<!--page-->
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-
-<h2 id="lists">Lists</h2>
-
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-<ul>
-  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-  <li>Donec id elit non mi porta gravida at eget metus.</li>
-  <li>Nulla vitae elit libero, a pharetra augue.</li>
-</ul>
-
-<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+<p>
+    Head into <span style="font-style: italic;font-weight: bold">Settings</span>. Again ensure that the GPU
+    selected is the RX560X<br />
+    Under the <span style="font-style: italic;font-weight: bold">General</span> tab, enable the following options:
+</p>
 
 <ol>
-  <li>Vestibulum id ligula porta felis euismod semper.</li>
-  <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-  <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+    <li>
+        Unlock Voltage Control
+    </li>
+    <li>
+        Unlock Voltage Monitoring
+    </li>
+    <li>
+        Extend official overclocking limits
+    </li>
 </ol>
 
-<!--page-->
+<p><img src="/assets/img/RX560X_OC/Afterburner_settings.jpg" alt="afterburner-settings" title="Fig 2. Ensure that the highlighted checkboxes are selected" /></p>
 
-<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+<p>
+    Click <span style="font-style: italic;font-weight: bold">Apply</span> to apply the changes.
+    <br />
+    When prompted to reboot, click <span style="font-style: italic;font-weight: bold">Yes</span>. You will
+    now be rebooted. Ensure that any important data on the system is saved before rebooting.
+</p>
 
-<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<h3>Step 2: Verify if Wattman is enabled</h3>
+<p>
+    Open
+    <span style="font-style: italic;font-weight: bold">AMD Radeon Settings</span>
+    , and head into the
+    <span style="font-style: italic;font-weight: bold">Gaming</span> tab.
+</p>
 
-<h2 id="images">Images</h2>
+<p><img src="/assets/img/RX560X_OC/Radeon_settings.jpg" alt="radeon-settings" title="Fig 3. Radeon Settings home" /></p>
 
-<p>Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.</p>
+<p>
+    Click on <span style="font-style: italic;font-weight: bold">Global Settings</span>
+</p>
 
-<p><img src="https://placehold.it/800x400" alt="placeholder" title="Large example image" />
-<img src="https://placehold.it/400x200" alt="placeholder" title="Medium example image" />
-<img src="https://placehold.it/200x200" alt="placeholder" title="Small example image" /></p>
+<p><img src="/assets/img/RX560X_OC/Game_tab.jpg" alt="global-settings" title="Fig 4. Click on Global Settings" /></p>
 
-<h2 id="tables">Tables</h2>
+<p>
+    If all went right, the
+    <span style="font-style: italic;font-weight: bold">Global Wattman</span>
+    tab should be visible.
+</p>
 
-<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p><img src="/assets/img/RX560X_OC/Global_settings.jpg" alt="global-settings" title="Fig 5. Click on the Global Wattman tab" /></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
+<p>
+    If the tab is not visible, go back to Afterburner, disable all the checkboxes,
+    reboot, and repeat Step 1.
+</p>
 
-<!--page-->
+<p>
+    Click on the <span style="font-style: italic;font-weight: bold">Global Wattman</span> tab.
+    If any warning about the warranty/risks pops up, click 'Yes' to accept it.<br />
+    You should now get a screen resembling the one below.
+</p>
 
-<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<p><img src="/assets/img/RX560X_OC/wattman.jpg" alt="wattman" title="Fig 6. Hooray, Wattman has been enabled !" /></p>
 
+<h3>Step 3: Get the baseline score</h3>
+
+<p>
+    The baseline score is used to determine the default performance of the GPU. It is
+    the advertised score of the manufacturer.
+    <br />
+    To get the baseline, open 3DMark and run the Firestrike benchmark. It is advisable to
+    close all other GPU-utilizing applications prior to running the benchmark.
+    <br />
+    After a few minutes of painful waiting, the benchmark result will appear. Note down
+    the values.
+</p>
+
+<p><img src="/assets/img/RX560X_OC/baseline.jpg" alt="baseline" title="Fig 7. Baseline Result - 3DMark FireStrike" /></p>
+
+<p>
+    Note that your results may be slightly different from the one above, based on various
+    factors such as the CPU, RAM, motherboard, and so on.<br />
+    We are now ready to begin tweaking the card.
+</p>
+
+<h3>Step 4: Basic tweak - Memory Timings</h3>
+
+<p>
+    Just like <a href="https://en.wikipedia.org/wiki/Memory_timings">RAM timings</a>
+    affect the time taken by the CPU to access data in the RAM, GPU vRAM timings affect
+    the time taken by the GPU to access data in the vRAM. The lower the strobing latency,
+    the faster is the data access rate.<br />
+    AMD has included 2 timing levels - level 1 and 2, where level 1 has higher latency
+    and consumes lesser power, while level 2 has lower latency but consumes higher power.
+    By default, the timing levels are in level 1 most of the time, to minimize the power draw.
+</p>
+<p>
+    In Wattman, scroll down to the Memory section. Click on
+    <span style="font-style: italic;font-weight: bold">Memory Timings</span> and select
+    <span style="font-style: italic;font-weight: bold">Memory Timing Level 2</span>
+</p>
+
+<p><img src="/assets/img/RX560X_OC/memory_mods.jpg" alt="memory_mods.jpg" title="Fig 8. Memory Tweaks" /></p>
+
+<p>
+    Hit <span style="font-style: italic;font-weight: bold">Apply</span>
+    to apply the changes.<br />
+    Re-run Firestrike and verify that a small improvemtn in performance has been obtained.
+</p>
+
+<h3>Step 5: Basic tweak - Memory clock speeds and voltages</h3>
+
+<p>
+    We'll now fix the clock speed and voltages of the vRAM. While it is possible to
+    play around with these values as well, the performance gain isn't that great. Note that the
+    <a href="#procedure">general tweaking heuristic</a> remains the same, so it is simply a matter
+    of applying them to the vRAM clocks/voltages instead of the GPU clocks/voltages.
+</p>
+<p>
+    Head back to the Memory section in Wattman. Enable the frequency slider and the voltage control.
+    <br />
+    Slide the frequency slider till <span style="font-weight: bold">1550Mhz Max</span>.
+    <br />
+    Set the 3rd value under <span style="font-style: italic;font-weight: bold">Voltage Control(mV)</span>
+    to <span style="font-weight: bold">850</span>.
+    <br />
+    Check that it looks like teh above figure.
+</p>
+<p>
+    Again, re-run Firestrike and verify that performance is slightly increased.
+</p>
+<p></p>
+
+<div style="background-color: #8a5bd0;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    padding: 20px;
+    border-style: double;
+    border-width: medium;
+    border-color: white;">
+    <span style="font-weight: bold; font-size: 1.3rem;">Saving and Restoring Profiles</span>
+    <p>
+    While messing around with the clocks and voltages, it is a good idea
+    to frequently save the current configurations by clicking
+    <span style="font-style: italic;font-weight: bold">Save Profile</span>. This exports
+    the current settings in an XML file.
+    <br />
+    After encountering a crash/ degradation in performance, simply click
+    <span style="font-style: italic;font-weight: bold">Load Profile</span>, and select
+    the saved XML file. This will restore the settings to the saved values, and saves
+    a lot of time since Wattman gets reset after every crash.
+    </p>
+</div>
+
+<p></p>
+<h3>Step 6: Advanced Tweaking - GPU Clocks and Voltages</h3>
+
+<p>
+    The idea here is to first increase the clock at a constant voltage, then decrease the
+    voltage at constant clocks till the system becomes unstables/ crashes.
+    <br />
+    <span style="font-weight: bold">Unstable state:</span> This occurs when the voltage supplied
+    is insufficient to drive the clock at the specified rate. As a result we may have a lot
+    of pixelation and stuttering in the benchmark, or the GPU drivers crash, often causing
+    the entire system to crash.
+    <br />
+    Let us now look at the general procedures for overclocking and undervolting.
+</p>
+
+<p><img src="/assets/img/RX560X_OC/oc_and_uv.jpg" alt="oc_and_uv" title="Fig 9. GPU overclocking and undervolting" /></p>
+
+<p>
+    First, scroll up to the GPU section and set
+    <span style="font-style: italic;font-weight: bold">Frequency(%)</span> option.
+    This allows Wattman to smooth the Frequency-Voltage curve for a given maximum
+    frequency.
+    <br />
+    Also set the <span style="font-style: italic;font-weight: bold">Voltage Control</span>
+    mode to manual, to enable changing the voltages.
+    <br />
+    We are now ready to begin tweaking !
+</p>
+
+<div id="procedure" style="border: 5px black solid; background-color: #5ed9e6">
+    <h3 class="text-center" id="overclocking">Overclocking</h3>
+    <ol style="font-size: larger">
+        <li>
+            Drag the orange Frequency slider(Fig. 9) till the Frequency becomes 1%.
+        </li>
+        <li>
+            Hit Apply to apply the changes.
+        </li>
+        <li>
+            Run FireStrike and record the score.
+        </li>
+        <li>
+            If there is an improvement in performance, save the profile and go back to
+            <span style="font-weight: bold"> Step 1</span>.
+        </li>
+        <li>
+            In case of instability, load the most recent saved XML, and move to the
+            <a href="#undervolting">undervolting</a> procedure.
+        </li>
+    </ol>
+</div>
+<p></p>
+<p>
+    After reaching a maximum clock value, start undervolting to minimize the power consumption
+    and the heat generated. Further, undervolting often reduces the thermal limitation, and
+    <span style="font-weight: bold">higher clocks can be achieved with slightly lower voltages</span>.
+</p>
+
+<div style="border: 5px black solid; background-color: #5ed9e6">
+    <h3 class="text-center" id="undervolting">Undervolting</h3>
+    <ol style="font-size: larger">
+        <li>
+            While the Maximum voltage is above 1000mV:<br />
+            a. Reduce the maximum voltage by 10mV and Apply <br />
+            b. Run Firestrike and ensure that it doesn't become unstable. In case of
+            instability go to <span style="font-weight: bold">Step 9</span>.
+        </li>
+        <li>
+            Save the profile
+        </li>
+        <li>
+            Reduce the maximum voltage by 5mV.
+        </li>
+        <li>
+            If it becomes less than the second highest voltage, set it equal.
+        </li>
+        <li>
+            Run firestrike, and measure the score. In case of
+            instability go to <span style="font-weight: bold">Step 9</span>.
+        </li>
+        <li>
+            If Max Voltage &gt; 2<sup>nd</sup> Highest voltage go to
+            <span style="font-weight: bold">Step 2</span>
+        </li>
+        <li>
+            Start reducing the 2<sup>nd</sup> Highest voltage by 10mV, maintaining
+            atleast 50mV between it and the level below it.
+        </li>
+        <li>
+            Again, run Firestrike and record the score. In case of
+            instability go to <span style="font-weight: bold">Step 9</span>.
+        </li>
+        <li>
+            In case of instability, there are 2 options:<br />
+            a. Reduce the clock-speed in steps of 0.5% till it becomes stable.<br />
+            b. Load the previous stable configuration, and fix it as the final one<br />
+        </li>
+    </ol>
+</div>
+
+<p></p>
+<p>
+    A (quite understandable) question would be
+    <span style="font-style: italic;font-weight: bold">"How to know when to stop?"</span>.
+    The answer for that is two pronged.
+    <br />
+    First, there is no configuration guaranteed to yield the maximum performance. The above
+    procedures for overclocking and undervolting are more like
+    <span style="font-weight: bold">heuristics</span>, i.e., they maximize the chances of getting
+    a performance improvement. However, it is always advisable to play around a little - using smaller
+    voltage steps for example. More on this in the <a href="#whyitworks">Why does it work ?</a> section.
+    <br />
+    Second, of course, is one's satisfaction with the current performance. The above process
+    is very time consuming, and once a desirable performance level (improvement in Firestrike score)
+    has been achieved, it becomes pretty pointless to continue and waste more time.
+</p>
+
+<h3>Results</h3>
+
+<p>
+    Great work! The GPU has now been overclocked and undervolted. Play some games to get a first-hand experience
+    of the performance boost.
+</p>
+
+<p>
+    My final configuration can be seen in Fig. 9.<br />
+    The Frequency has been increased by <span style="font-weight: bold">6%</span>.
+    <br />
+    The maximum voltages are set to <span style="font-weight: bold">981mV</span>
+    and <span style="font-weight: bold">987mV</span>.
+</p>
+
+<p><img src="/assets/img/RX560X_OC/results.jpg" alt="results" title="Fig 10. Original vs. final benchmark scores" /></p>
+
+<p>
+    From the figure, there is a net increase of 7% in the performance !! The next section deals
+    with the analysis of the results, and is strictly an optional read.
+</p>
+
+<h3>Analysis</h3>
+
+<p>
+    The Firestrike benchmark consists of 3 tests - Graphics, Physics, and Combined, each of
+    which test different parts of the GPU. As can be seen in Fig. 10, the change in each
+    is very different from the other. Let us look each one in greater detail.
+</p>
+
+<h4>I. Graphics Test</h4>
+<p>
+    The graphics test focuses on geometry, illumination, and pixel processing in the GPU.
+    It makes use of both the compute and graphics shaders in order to distribute the work
+    uniformly across the compute units. Here we have almost 5.5% improvement, which is
+    along expected lines, since clock speeds have been increased by 6%.
+</p>
+
+<h4>II. Physics Test</h4>
+<p>
+    A massive 22% improvement is observed in the Physics scores. The Physics Test mainly loads
+    the CPU with multi-threaded simulation workloads, while keeping the GPU load to a minimum.
+    The sharp increase in performance indicates the presence of a
+    <a href="https://www.wepc.com/tips/cpu-gpu-bottleneck/">GPU bottleneck</a>. Overclocking the
+    GPU helps relieve this bottleneck, and allows more performance to be extracted from the CPU.
+</p>
+
+<h4>III. Combined Test</h4>
+<p>
+    The combined test loads both the CPU and the GPU – the CPU for running 32 parallel simulations
+    and the GPU for various graphics operations present in the Graphics Test.
+    An improvement of 4.4% is observed, which is slightly less than the 6% clock-speed increase.
+    <br /><br />
+    Possible reasons for this include:<br />
+    1. Overheads incurred in transferring the simulation input from the GPU to CPU, and output from
+    CPU to the GPU.
+    <br />
+    2. The CPU has not been overclocked. So its contribution remains more or less the same.
+</p>
+
+<h3 id="whyitworks">But why does this work ?</h3>
+
+<p>
+    But if we can increase the performance with such "minimal" effort, then why doesn't the manufacturer
+    keep the cards at these configurations beforehand? Are we just victims of a very poor practical joke?
+</p>
+<p>
+    Fortunately, neither are manufacturers sadistic, nor do they have any sense of humour (so to speak).
+    There is indeed a valid reason for the retail configuration being the way it is. To understand this,
+    we must first look at how GPUs are manufactured.
+</p>
+<p>
+    A GPU is nothing more than a piece of Silicon. And these pieces are manufactured in huge quantities
+    (100s of thousands at a time). Each batch of GPUs is then rigorously tested for stability. It is
+    important to note that each GPU is unique, i.e., the Silicon configuration on it is slightly different
+    from that on other samples. Hence, each GPU potentially gives best performance at a different configuration.
+    Naturally, the sheer amount of work needed to find the suitable configurations for each and every GPU
+    makes this highly infeasible.
+    <br />
+    Further, a very small fraction of samples may fail at clocks higher than a certain
+    <span style="font-weight: bold">threshold clock</span>, or at voltages lower than a
+    <span style="font-weight: bold">threshold voltage</span>. Note that this is a "small" fraction,
+    not a "negligible" fraction. Discarding these samples will lead to huge losses which is unacceptable.
+</p>
+
+<p>
+    Hence we have all the samples configured with the threshold clock and threshold voltages. Since this
+    configuration is only required for a very samll fraction of GPUs, there are very high chances that
+    a random GPU has headroom for tweaking.
+</p>
+
+<h3>Conclusion</h3>
+
+<p>
+    Et voila!! You have successfully tweaked your GPU, and have got an idea of the general procedure to
+    be followed. Note that I have skipped power tweaking completely in order to minimize the risk of damage
+    to the laptop, but this is an important metric to be considered when working in less constrained setups,
+    such as Desktop systems.
+</p>
+<p>
+    Once you get a decent idea of how this works, you can start estimating values in much bigger steps than
+    in the heuristics, and save a lot of time. Also remember that your results may be similar to someone
+    else, but the chances of them being the same are remote (because of reasons discussed in the previous
+    section).
+</p>
+
+<h3>References</h3>
+<ul>
+    <li>
+        <a href="https://www.gamersnexus.net/guides/2501-amd-rx-480-overclocking-guide-and-walkthrough">
+            <span style="font-weight: bold; ">Steve Burke's guide to overclocking the RX 480</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.amd.com/en/support/kb/faq/dh-020">
+            <span style="font-weight: bold; ">AMD's Wattman guide</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.crucial.com/usa/en/memory-performance-speed-latency">
+            <span style="font-weight: bold; ">Metrics for memory performance, by Crucial</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.maketecheasier.com/what-is-ram-timing/">
+            <span style="font-weight: bold; ">An easy explanation of RAM timings</span>
+        </a>
+    </li>
+    <li>
+        <a href="http://akamai-dl.futuremark.com.akamaized.net/3dmark-technical-guide.pdf">
+            <span style="font-weight: bold; ">3D Mark Technical guide</span>
+        </a>
+    </li>
+</ul>
 
 
                 <!-- Pagination links -->
@@ -496,11 +828,20 @@ November 22, 2018
                         
                         
                             <li>
-                                <a href="/let-flexbox-work-for-you-or-perish/">
+                                <a href="/trust-me-it-will-work/">
                                     
-                                        <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme2_ylcxxz.jpg">
+                                        <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821648/theme1_eoyjtl.jpg">
                                     
-                                    <h3>Let flexbox work for you or perish</h3>
+                                    <h3>Trust me, it will work</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/birds-can-fly-but-this-you-knew-already/">
+                                    
+                                        <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559825145/theme16_o0seet.jpg">
+                                    
+                                    <h3>Birds can fly, but this you knew already</h3>
                                 </a>
                             </li>
                         
@@ -513,15 +854,6 @@ November 22, 2018
                                 </a>
                             </li>
                         
-                            <li>
-                                <a href="/do-you-believe-that-a-spider-can-dance/">
-                                    
-                                        <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559824306/theme13_dshbqx.jpg">
-                                    
-                                    <h3>Do you believe that a spider can dance?</h3>
-                                </a>
-                            </li>
-                        
                     </ul>
                 </aside>
             
@@ -530,7 +862,7 @@ November 22, 2018
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="3">
+            <div class="time-bar" data-minutes="13">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -550,13 +882,13 @@ November 22, 2018
         </div>
     </div>
     
-    <a href="/meltdown-how-and-why/" class="post-preview">
+    <a href="/far-far-away-behind-the-word-mountains/" class="post-preview">
         <div class="image">
             
-                <img src="/assets/img/Meltdown/BP_Meltdown-Spectre.png">
+                <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821648/theme5_wmutla.jpg">
             
         </div>
-        <h3 class="title">Meltdown - How and Why</h3>
+        <h3 class="title">Far far away behind the word mountains</h3>
     </a>
 </div>
 
@@ -572,86 +904,17 @@ November 22, 2018
 
         <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&quot;%20/why-books-should-be-your-priority/%20via%20&#64;&hashtags=books,read,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;The AMD Radeon &trade; RX 560X GPU has become a very popular choice for budget gaming laptops, including the Acer Nitro series, the Asus TUF series, and the Dell Inspiron Gaming series. This post is a guide for enthusiasts interested in extracting its maximum performance without risking damage to the laptop.<br/> The post is targeted at beginners, and no prior knowledge of overclocking/tweaking is needed.&quot;%20/RX-560X-Overclocking-Guide/%20via%20&#64;&hashtags="
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=/why-books-should-be-your-priority/"
+    <a aria-label="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=/RX-560X-Overclocking-Guide/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
 </section>
 
         
-
-  <section class="author">
-    <div class="details">
-      
-        <img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Thiago Rossener">
-      
-      <p class="def">Author</p>
-      <h3 class="name">
-        <a href="/authors/thiagorossener/">Thiago Rossener</a>
-      </h3>
-      <p class="desc">Just a developer.</p>
-      <p>
-        
-          <a href="https://github.com/thiagorossener" title="Github">
-            <svg><use xlink:href="#icon-github"></use></svg>
-          </a>
-        
-        
-          <a href="https://www.facebook.com/thiagorossener" title="Facebook">
-            <svg><use xlink:href="#icon-facebook"></use></svg>
-          </a>
-        
-        
-          <a href="https://twitter.com/thiagorossener" title="Twitter">
-            <svg><use xlink:href="#icon-twitter"></use></svg>
-          </a>
-        
-        
-          <a href="https://medium.com/@thiagorossener" title="Medium">
-            <svg><use xlink:href="#icon-medium"></use></svg>
-          </a>
-        
-        
-          <a href="https://www.instagram.com/thiagorossener" title="Instagram">
-            <svg><use xlink:href="#icon-instagram"></use></svg>
-          </a>
-        
-        
-          <a href="https://www.linkedin.com/in/thiagorossener" title="LinkedIn">
-            <svg><use xlink:href="#icon-linkedin"></use></svg>
-          </a>
-        
-      </p>
-    </div>
-  </section>
-
-  
-  
-  
-  
-  
-  
-  
-
-  <script type="application/ld+json">
-  {
-      "@context": "http://schema.org",
-      "@type": "Person",
-      "name": "Thiago Rossener",
-      
-      "image": "/assets/img/uploads/profile.png",
-      
-      "jobTitle": "Chief Editor",
-      "url": "/authors/thiagorossener/",
-      "sameAs": [
-        "https://github.com/thiagorossener","https://www.facebook.com/thiagorossener","https://twitter.com/thiagorossener","https://medium.com/@thiagorossener","https://www.instagram.com/thiagorossener","https://www.linkedin.com/in/thiagorossener"
-      ]
-  }
-  </script>
 
 
         
@@ -668,7 +931,7 @@ November 22, 2018
         disqus_loaded = true;
         var disqus_shortname = 'disqus_username';
         var disqus_title = '';
-        var disqus_url = '/why-books-should-be-your-priority/';
+        var disqus_url = '/RX-560X-Overclocking-Guide/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -799,143 +1062,469 @@ November 22, 2018
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Why books should be your priority?",
-            "headline": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559822138/theme9_v273a9.jpg",
-            "url": "/why-books-should-be-your-priority/",
-            "articleBody": "Cas sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+            "name": "RX 560X Overclocking Guide",
+            "headline": "",
+            "description": "The AMD Radeon &trade; RX 560X GPU has become a very popular choice for budget gaming laptops, including the Acer Nitro series, the Asus TUF series, and the Dell Inspiron Gaming series. This post is a guide for enthusiasts interested in extracting its maximum performance without risking damage to the laptop.<br/> The post is targeted at beginners, and no prior knowledge of overclocking/tweaking is needed.",
+            "image": "/assets/img/RX560X_OC/homescreen_thumb.jpg",
+            "url": "/RX-560X-Overclocking-Guide/",
+            "articleBody": "
+Before We Begin
+                
+                    Overclocking, undervolting, or tweaking any other GPU settings will
+                        void the warranty .
+                        Remember to disable Wattman and uninstall Afterburner before visiting the service centre !
+                    Avoid increasing the voltage and the power limit, even by small amounts.
+                        Since laptops are optimized for power efficiency, chances are the motherboard
+                        won't be able to sustain the supply and may get damaged.
+                    This guide minimizes the voltage and maximizes the clock speed.
+                        Note that better results may be obtained simply by increasing the clock speed and the voltage,
+                        but the risks outweigh the benefits.
+                    
+                
 
 
-  Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+Prerequisites
 
-
-Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-
-
-
-Inline HTML elements
-
-HTML defines a long list of available inline tags, a complete list of which can be found on the Mozilla Developer Network.
-
-
-  To bold text, use &amp;lt;strong&amp;gt;.
-  To italicize text, use &amp;lt;em&amp;gt;.
-  Abbreviations, like HTML should use &amp;lt;abbr&amp;gt;, with an optional title attribute for the full phrase.
-  Citations, like — Thiago Rossener, should use &amp;lt;cite&amp;gt;.
-  Deleted text should use &amp;lt;del&amp;gt; and inserted text should use &amp;lt;ins&amp;gt;.
-  Superscript text uses &amp;lt;sup&amp;gt; and subscript text uses &amp;lt;sub&amp;gt;.
-
-
-Most of these elements are styled by browsers with few modifications on our part.
-
-
-
-Heading 1
-Heading 2
-Heading 3
-Heading 4
-
-Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-Code
-
-Cum sociis natoque penatibus et magnis dis code element montes, nascetur ridiculus mus.
-
-// Example can be run directly in your JavaScript console
-
-// Create a function that takes two arguments and returns the sum of those arguments
-var adder ~|=| new Function(&quot;a&quot;, &quot;b&quot;, &quot;return a + b&quot;);
-
-// Call the function
-adder(2, 6);
-// &amp;gt; 8
-
-
-
-
-Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
-
-Lists
-
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-
-
-  Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-  Donec id elit non mi porta gravida at eget metus.
-  Nulla vitae elit libero, a pharetra augue.
-
-
-Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
-
-
-  Vestibulum id ligula porta felis euismod semper.
-  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  Maecenas sed diam eget risus varius blandit sit amet non magna.
-
-
-
-
-Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
-
-Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-Images
-
-Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.
-
-
-
-
-
-Tables
-
-Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-
-  
     
-      Name
-      Upvotes
-      Downvotes
-    
-  
-  
-    
-      Totals
-      21
-      23
-    
-  
-  
-    
-      Alice
-      10
-      11
+        The latest Radeon Adrenalin Driver.
+        Version &amp;gt;= 19.3.1.
     
     
-      Bob
-      4
-      3
+        MSI Afterburner,
+        for enabling Wattman and verifying the overclock.
     
     
-      Charlie
-      7
-      9
+        3DMark benchmark suite,
+        for measuring the performance gain.
+        Download the basic edition and install the FireStrike benchmark.
     
-  
+    
+        Excel, notepad, or any other method to note down the results.
+    
+    
+        Patience. In sufficiently high quantities :)
+    
+
+
+Step 1: Enable Wattman
+
+    Wattman is AMD's utility for tuning various parameteres of the GPU, including GPU clocks,
+    GPU voltages, memory clocks, GPU fan-speeds, etc. It is available as part of the Adrenalin driver
+    for desktop GPUs. However, it is disabled for mobile (laptop) GPUs by default due to the risk of damage
+    to the laptop.
+
+
+    To enable Wattman, open up MSI Aferburner and ensure that the GPU listed is the RX 560X.
+    The default clock speeds of the GPU and the vRAM should be visible.
 
 
 
 
-Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.
+
+    Head into Settings. Again ensure that the GPU
+    selected is the RX560X
+    Under the General tab, enable the following options:
+
+
+
+    
+        Unlock Voltage Control
+    
+    
+        Unlock Voltage Monitoring
+    
+    
+        Extend official overclocking limits
+    
+
+
+
+
+
+    Click Apply to apply the changes.
+    
+    When prompted to reboot, click Yes. You will
+    now be rebooted. Ensure that any important data on the system is saved before rebooting.
+
+
+Step 2: Verify if Wattman is enabled
+
+    Open
+    AMD Radeon Settings
+    , and head into the
+    Gaming tab.
+
+
+
+
+
+    Click on Global Settings
+
+
+
+
+
+    If all went right, the
+    Global Wattman
+    tab should be visible.
+
+
+
+
+
+    If the tab is not visible, go back to Afterburner, disable all the checkboxes,
+    reboot, and repeat Step 1.
+
+
+
+    Click on the Global Wattman tab.
+    If any warning about the warranty/risks pops up, click 'Yes' to accept it.
+    You should now get a screen resembling the one below.
+
+
+
+
+Step 3: Get the baseline score
+
+
+    The baseline score is used to determine the default performance of the GPU. It is
+    the advertised score of the manufacturer.
+    
+    To get the baseline, open 3DMark and run the Firestrike benchmark. It is advisable to
+    close all other GPU-utilizing applications prior to running the benchmark.
+    
+    After a few minutes of painful waiting, the benchmark result will appear. Note down
+    the values.
+
+
+
+
+
+    Note that your results may be slightly different from the one above, based on various
+    factors such as the CPU, RAM, motherboard, and so on.
+    We are now ready to begin tweaking the card.
+
+
+Step 4: Basic tweak - Memory Timings
+
+
+    Just like RAM timings
+    affect the time taken by the CPU to access data in the RAM, GPU vRAM timings affect
+    the time taken by the GPU to access data in the vRAM. The lower the strobing latency,
+    the faster is the data access rate.
+    AMD has included 2 timing levels - level 1 and 2, where level 1 has higher latency
+    and consumes lesser power, while level 2 has lower latency but consumes higher power.
+    By default, the timing levels are in level 1 most of the time, to minimize the power draw.
+
+
+    In Wattman, scroll down to the Memory section. Click on
+    Memory Timings and select
+    Memory Timing Level 2
+
+
+
+
+
+    Hit Apply
+    to apply the changes.
+    Re-run Firestrike and verify that a small improvemtn in performance has been obtained.
+
+
+Step 5: Basic tweak - Memory clock speeds and voltages
+
+
+    We'll now fix the clock speed and voltages of the vRAM. While it is possible to
+    play around with these values as well, the performance gain isn't that great. Note that the
+    general tweaking heuristic remains the same, so it is simply a matter
+    of applying them to the vRAM clocks/voltages instead of the GPU clocks/voltages.
+
+
+    Head back to the Memory section in Wattman. Enable the frequency slider and the voltage control.
+    
+    Slide the frequency slider till 1550Mhz Max.
+    
+    Set the 3rd value under Voltage Control(mV)
+    to 850.
+    
+    Check that it looks like teh above figure.
+
+
+    Again, re-run Firestrike and verify that performance is slightly increased.
+
+
+
+
+    Saving and Restoring Profiles
+    
+    While messing around with the clocks and voltages, it is a good idea
+    to frequently save the current configurations by clicking
+    Save Profile. This exports
+    the current settings in an XML file.
+    
+    After encountering a crash/ degradation in performance, simply click
+    Load Profile, and select
+    the saved XML file. This will restore the settings to the saved values, and saves
+    a lot of time since Wattman gets reset after every crash.
+    
+
+
+
+Step 6: Advanced Tweaking - GPU Clocks and Voltages
+
+
+    The idea here is to first increase the clock at a constant voltage, then decrease the
+    voltage at constant clocks till the system becomes unstables/ crashes.
+    
+    Unstable state: This occurs when the voltage supplied
+    is insufficient to drive the clock at the specified rate. As a result we may have a lot
+    of pixelation and stuttering in the benchmark, or the GPU drivers crash, often causing
+    the entire system to crash.
+    
+    Let us now look at the general procedures for overclocking and undervolting.
+
+
+
+
+
+    First, scroll up to the GPU section and set
+    Frequency(%) option.
+    This allows Wattman to smooth the Frequency-Voltage curve for a given maximum
+    frequency.
+    
+    Also set the Voltage Control
+    mode to manual, to enable changing the voltages.
+    
+    We are now ready to begin tweaking !
+
+
+
+    Overclocking
+    
+        
+            Drag the orange Frequency slider(Fig. 9) till the Frequency becomes 1%.
+        
+        
+            Hit Apply to apply the changes.
+        
+        
+            Run FireStrike and record the score.
+        
+        
+            If there is an improvement in performance, save the profile and go back to
+             Step 1.
+        
+        
+            In case of instability, load the most recent saved XML, and move to the
+            undervolting procedure.
+        
+    
+
+
+
+    After reaching a maximum clock value, start undervolting to minimize the power consumption
+    and the heat generated. Further, undervolting often reduces the thermal limitation, and
+    higher clocks can be achieved with slightly lower voltages.
+
+
+
+    Undervolting
+    
+        
+            While the Maximum voltage is above 1000mV:
+            a. Reduce the maximum voltage by 10mV and Apply 
+            b. Run Firestrike and ensure that it doesn't become unstable. In case of
+            instability go to Step 9.
+        
+        
+            Save the profile
+        
+        
+            Reduce the maximum voltage by 5mV.
+        
+        
+            If it becomes less than the second highest voltage, set it equal.
+        
+        
+            Run firestrike, and measure the score. In case of
+            instability go to Step 9.
+        
+        
+            If Max Voltage &amp;gt; 2nd Highest voltage go to
+            Step 2
+        
+        
+            Start reducing the 2nd Highest voltage by 10mV, maintaining
+            atleast 50mV between it and the level below it.
+        
+        
+            Again, run Firestrike and record the score. In case of
+            instability go to Step 9.
+        
+        
+            In case of instability, there are 2 options:
+            a. Reduce the clock-speed in steps of 0.5% till it becomes stable.
+            b. Load the previous stable configuration, and fix it as the final one
+        
+    
+
+
+
+
+    A (quite understandable) question would be
+    &quot;How to know when to stop?&quot;.
+    The answer for that is two pronged.
+    
+    First, there is no configuration guaranteed to yield the maximum performance. The above
+    procedures for overclocking and undervolting are more like
+    heuristics, i.e., they maximize the chances of getting
+    a performance improvement. However, it is always advisable to play around a little - using smaller
+    voltage steps for example. More on this in the Why does it work ? section.
+    
+    Second, of course, is one's satisfaction with the current performance. The above process
+    is very time consuming, and once a desirable performance level (improvement in Firestrike score)
+    has been achieved, it becomes pretty pointless to continue and waste more time.
+
+
+Results
+
+
+    Great work! The GPU has now been overclocked and undervolted. Play some games to get a first-hand experience
+    of the performance boost.
+
+
+
+    My final configuration can be seen in Fig. 9.
+    The Frequency has been increased by 6%.
+    
+    The maximum voltages are set to 981mV
+    and 987mV.
+
+
+
+
+
+    From the figure, there is a net increase of 7% in the performance !! The next section deals
+    with the analysis of the results, and is strictly an optional read.
+
+
+Analysis
+
+
+    The Firestrike benchmark consists of 3 tests - Graphics, Physics, and Combined, each of
+    which test different parts of the GPU. As can be seen in Fig. 10, the change in each
+    is very different from the other. Let us look each one in greater detail.
+
+
+I. Graphics Test
+
+    The graphics test focuses on geometry, illumination, and pixel processing in the GPU.
+    It makes use of both the compute and graphics shaders in order to distribute the work
+    uniformly across the compute units. Here we have almost 5.5% improvement, which is
+    along expected lines, since clock speeds have been increased by 6%.
+
+
+II. Physics Test
+
+    A massive 22% improvement is observed in the Physics scores. The Physics Test mainly loads
+    the CPU with multi-threaded simulation workloads, while keeping the GPU load to a minimum.
+    The sharp increase in performance indicates the presence of a
+    GPU bottleneck. Overclocking the
+    GPU helps relieve this bottleneck, and allows more performance to be extracted from the CPU.
+
+
+III. Combined Test
+
+    The combined test loads both the CPU and the GPU – the CPU for running 32 parallel simulations
+    and the GPU for various graphics operations present in the Graphics Test.
+    An improvement of 4.4% is observed, which is slightly less than the 6% clock-speed increase.
+    
+    Possible reasons for this include:
+    1. Overheads incurred in transferring the simulation input from the GPU to CPU, and output from
+    CPU to the GPU.
+    
+    2. The CPU has not been overclocked. So its contribution remains more or less the same.
+
+
+But why does this work ?
+
+
+    But if we can increase the performance with such &quot;minimal&quot; effort, then why doesn't the manufacturer
+    keep the cards at these configurations beforehand? Are we just victims of a very poor practical joke?
+
+
+    Fortunately, neither are manufacturers sadistic, nor do they have any sense of humour (so to speak).
+    There is indeed a valid reason for the retail configuration being the way it is. To understand this,
+    we must first look at how GPUs are manufactured.
+
+
+    A GPU is nothing more than a piece of Silicon. And these pieces are manufactured in huge quantities
+    (100s of thousands at a time). Each batch of GPUs is then rigorously tested for stability. It is
+    important to note that each GPU is unique, i.e., the Silicon configuration on it is slightly different
+    from that on other samples. Hence, each GPU potentially gives best performance at a different configuration.
+    Naturally, the sheer amount of work needed to find the suitable configurations for each and every GPU
+    makes this highly infeasible.
+    
+    Further, a very small fraction of samples may fail at clocks higher than a certain
+    threshold clock, or at voltages lower than a
+    threshold voltage. Note that this is a &quot;small&quot; fraction,
+    not a &quot;negligible&quot; fraction. Discarding these samples will lead to huge losses which is unacceptable.
+
+
+
+    Hence we have all the samples configured with the threshold clock and threshold voltages. Since this
+    configuration is only required for a very samll fraction of GPUs, there are very high chances that
+    a random GPU has headroom for tweaking.
+
+
+Conclusion
+
+
+    Et voila!! You have successfully tweaked your GPU, and have got an idea of the general procedure to
+    be followed. Note that I have skipped power tweaking completely in order to minimize the risk of damage
+    to the laptop, but this is an important metric to be considered when working in less constrained setups,
+    such as Desktop systems.
+
+
+    Once you get a decent idea of how this works, you can start estimating values in much bigger steps than
+    in the heuristics, and save a lot of time. Also remember that your results may be similar to someone
+    else, but the chances of them being the same are remote (because of reasons discussed in the previous
+    section).
+
+
+References
+
+    
+        
+            Steve Burke's guide to overclocking the RX 480
+        
+    
+    
+        
+            AMD's Wattman guide
+        
+    
+    
+        
+            Metrics for memory performance, by Crucial
+        
+    
+    
+        
+            An easy explanation of RAM timings
+        
+    
+    
+        
+            3D Mark Technical guide
+        
+    
 
 ",
-            "wordcount": "641",
+            "wordcount": "2513",
             "inLanguage": "en",
-            "dateCreated": "2018-11-22/",
-            "datePublished": "2018-11-22/",
-            "dateModified": "2018-11-22/",
+            "dateCreated": "2019-10-14/",
+            "datePublished": "2019-10-14/",
+            "dateModified": "2019-10-14/",
             "author": {
                 "@type": "Person",
                 "name": "Thiago Rossener",
@@ -960,9 +1549,9 @@ Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur e
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "life",
-            "articleSection": "life",
-            "keywords": ["books","read"]
+            "genre": "hardware",
+            "articleSection": "hardware",
+            "keywords": [""]
         }
         </script>
     </body>
