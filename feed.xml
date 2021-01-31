@@ -2,12 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TecHooT</title>
-    <description>The Techoot (or TecH007) is a blog about computer systems mainly targeted at those with little to no prior technical knowledge.</description>
+    <description>The Techoot (or TecH007) is a blog about computers mainly targeted at those with little to no prior technical knowledge.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Oct 2020 06:14:43 +0530</pubDate>
-    <lastBuildDate>Sat, 10 Oct 2020 06:14:43 +0530</lastBuildDate>
+    <pubDate>Mon, 01 Feb 2021 02:58:13 +0530</pubDate>
+    <lastBuildDate>Mon, 01 Feb 2021 02:58:13 +0530</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>No Lane - No Gain; No Strain - No Battery Drain!</title>
+        <description>&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt; &lt;p&gt;A couple of laptops at home were being plagued by the most dreaded infection (not COVID; that hasn’t manifested as a computer virus yet!) – the battery would drain incredibly fast when they were sleeping – it would completely discharge from 100% in less than a day !&lt;/p&gt; &lt;h3 id=&quot;todo-add-table-here---laptop-name-cpu-microarchitecture-battery-drain&quot;&gt;TODO: (Add table here) -&amp;gt; Laptop Name, CPU (Microarchitecture), Battery Drain&lt;/h3&gt; &lt;p&gt;The first laptop was an Ideapad S340-14API powered by the Ryzen 5 3500U (Zen + architecture), while the other was an Asus Vivobook 14 with a beastly Ryzen 7 4700U (Zen 2 architecture) under the hood.&lt;/p&gt; &lt;h2 id=&quot;the-investigation&quot;&gt;The...</description>
+        <pubDate>Sun, 31 Jan 2021 20:50:41 +0530</pubDate>
+        <link>/no-lane,-no-gain,-no-strain,-no-battery-drain/</link>
+        <guid isPermaLink="true">/no-lane,-no-gain,-no-strain,-no-battery-drain/</guid>
+        
+        <category>laptops,</category>
+        
+        <category>battery</category>
+        
+        <category>life</category>
+        
+        <category>hardware</category>
+      </item>
+    
+      <item>
+        <title>CPUs - The Magic Behind The Machines</title>
+        <description>&lt;p&gt;I’m sure we’ve all come across the terms “CPU” and “processor”, especially when looking to buy a computer, and increasingly while buying smartphones as well. However, these inconspicuous feats of engineering are far more versatile than most people know. For instance, how many of the following devices do you think requires a CPU ? &lt;strong&gt;Add pictures here&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Washing Machine&lt;/li&gt; &lt;li&gt;Car&lt;/li&gt; &lt;li&gt;Induction Cooker&lt;/li&gt; &lt;li&gt;Fire alarm&lt;/li&gt; &lt;li&gt;Microwave Oven&lt;/li&gt; &lt;li&gt;Refrigerator&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If your answer is - &lt;strong&gt;all of the above&lt;/strong&gt;, then congratulations ! While they certainly do not need a CPU for their basic functioning, all of the advanced features which enhance...</description>
+        <pubDate>Mon, 09 Nov 2020 03:50:41 +0530</pubDate>
+        <link>/CPUs-The-Computing-Workhorses/</link>
+        <guid isPermaLink="true">/CPUs-The-Computing-Workhorses/</guid>
+        
+        <category>Processors,</category>
+        
+        <category>Central</category>
+        
+        <category>Processing</category>
+        
+        <category>Unit,</category>
+        
+        <category>CPU</category>
+        
+        <category>Hardware</category>
+      </item>
     
       <item>
         <title>RX 560X Overclocking Guide</title>
@@ -36,7 +72,7 @@
         <link>/meltdown-how-and-why/</link>
         <guid isPermaLink="true">/meltdown-how-and-why/</guid>
         
-        <category>security</category>
+        <category>Security</category>
       </item>
     
       <item>

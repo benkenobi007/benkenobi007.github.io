@@ -3,6 +3,22 @@
   
   
     {
+      "title"    : "No Lane - No Gain; No Strain - No Battery Drain!",
+      "tags"     : "laptops,, battery, and life",
+      "categories" : "hardware",
+      "url"      : "/no-lane,-no-gain,-no-strain,-no-battery-drain/",
+      "date"     : "01/31/2021"
+    } ,
+  
+    {
+      "title"    : "CPUs - The Magic Behind The Machines",
+      "tags"     : "Processors,, Central, Processing, Unit,, and CPU",
+      "categories" : "Hardware",
+      "url"      : "/CPUs-The-Computing-Workhorses/",
+      "date"     : "11/09/2020"
+    } ,
+  
+    {
       "title"    : "RX 560X Overclocking Guide",
       "tags"     : "",
       "categories" : "hardware",
@@ -21,7 +37,7 @@
     {
       "title"    : "Meltdown - How and Why",
       "tags"     : "",
-      "categories" : "security",
+      "categories" : "Security",
       "url"      : "/meltdown-how-and-why/",
       "date"     : "08/05/2019"
     } ,
