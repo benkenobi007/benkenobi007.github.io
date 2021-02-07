@@ -27,13 +27,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="No Lane - No Gain; No Strain - No Battery Drain! | TecHooT">
     <meta name="twitter:description" content="A not so brief account of my tryst with laptop power management">
-    <meta property="twitter:image:src" content="/assets/img/blog-image.png">
+    <meta property="twitter:image:src" content="/assets/img/Battery_Drain/battery_drain_background.jpeg">
     
 
     <!-- Social: Facebook / Open Graph -->
     <meta property="og:url" content="/no-lane,-no-gain,-no-strain,-no-battery-drain/">
     <meta property="og:title" content="No Lane - No Gain; No Strain - No Battery Drain! | TecHooT">
-    <meta property="og:image" content="/assets/img/blog-image.png">
+    <meta property="og:image" content="/assets/img/Battery_Drain/battery_drain_background.jpeg">
     <meta property="og:description" content="A not so brief account of my tryst with laptop power management">
     <meta property="og:site_name" content="TecHooT">
 
@@ -339,11 +339,13 @@ January 31, 2021
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>14 min to read</span>
+                    <span>15 min to read</span>
                 </p>
                 <h1 class="post-title">No Lane - No Gain; No Strain - No Battery Drain!</h1>
                 <p class="post-subtitle"></p>
 
+                
+                    <img src="/assets/img/Battery_Drain/battery_drain_background.jpeg" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -353,11 +355,26 @@ January 31, 2021
                 <!-- Add your table of contents here -->
 
 
-                <h2 id="background">Background</h2>
+                <div class="contents" style="border-style: solid; border-width: 20px">
+    <h2>Contents</h2>
+    <ul>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#the-investigation">The Investigation</a></li>
+        <li><a href="#tldr---the-problem-and-the-solution">TL;DR - The Problem &amp; The Solution</a></li>
+        <li><a href="#battery-drain-vs-system-performance-modes">Battery Drain Vs. System Performance Modes</a></li>
+        <li><a href="#quantifying-the-performance-variation">Quantifying The Performance Variation</a></li>
+        <li><a href="#cinebench-r23-results">Cinebench R23 Results</a></li>
+        <li><a href="#cinebench-r23---single-core">Logs And Analysis: Cinebench R23 - Single Core Benchmark</a></li>
+        <li><a href="#cinebench-r23---multi-core">Logs And Analysis: Cinebench R23 - Multi Core Benchmark</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+</div>
+
+<h2 id="background">Background</h2>
 
 <p>A couple of laptops at home were being plagued by the most dreaded infection (not COVID; that hasn’t manifested as a computer virus yet!) – the battery would drain incredibly fast when they were sleeping – it would completely discharge from 100% in less than a day !</p>
 
-<h3 id="todo-add-table-here---laptop-name-cpu-microarchitecture-battery-drain">TODO: (Add table here) -&gt; Laptop Name, CPU (Microarchitecture), Battery Drain</h3>
+<p><img src="/assets/img/Battery_Drain/table1.JPG" alt="Laptop Details" title="Table 1 - Laptop Details" /></p>
 
 <p>The first laptop was an Ideapad S340-14API powered by the Ryzen 5 3500U (Zen + architecture), while the other was an Asus Vivobook 14 with a beastly Ryzen 7 4700U (Zen 2 architecture) under the hood.</p>
 
@@ -365,9 +382,7 @@ January 31, 2021
 <p>My first suspect was the CPU support for <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/device-sleeping-states"><strong>D3HOT</strong></a>. D3HOT is a PCIe low power state which is entered in sleep by the endpoint devices (all devices connected to the PCIe bus).
 If properly supported, the power draw will become equivalent to the NVMe PS4 state for the SSDs (few hundred milliwatts). D3HOT support in SSDs was required by Microsoft and Intel’s introduction of Modern Standby, which is what powers the ubiquitous <a href="https://docs.microsoft.com/en-us/windows-hardware/test/weg/delivering-a-great-startup-and-shutdown-experience">“fast boot”</a> technology found in Windows 8 and 10. Since Intel was involved in the development of D3HOT, AMD’s support of D3HOT came into question.</p>
 
-<p>However, battery drain in a friend’s ROG Zephyrus G14 with a Ryzen 7 4800H (also with Zen 2 arch) was perfectly normal, indicating that there was nothing missing with AMD’s implementation of D3HOT.</p>
-
-<p>I then began to dig in to the BIOS on each laptop. The Asus’s BIOS was unexpectedly lean and barely had any settings in it, let alone power management! Luckily enough a <strong>Windows Update seemed to fix the issue on the Asus Laptop</strong>.</p>
+<p>However, battery drain in a friend’s ROG Zephyrus G14 with a Ryzen 7 4800HS (also Zen 2 based) was perfectstyle=”color: white;”y settings in it, let alone power management! Luckily enough a <strong>Windows Update seemed to fix the issue on the Asus Laptop</strong>.</p>
 
 <p>The Lenovo BIOS was more generous with its settings, though still pretty limited with what one could do. Nevertheless, 2 settings looked interesting – <strong>System Performance Mode</strong> and <strong>Always On USB</strong>.</p>
 
@@ -384,28 +399,28 @@ If properly supported, the power draw will become equivalent to the NVMe PS4 sta
 
 <p><img src="/assets/img/Battery_Drain/pic3.png" alt="SPM Descriptions" title="Fig. 3 - System Performance Modes Description" /></p>
 
-<p>No information is given about what specific parameters are being modified, and it is also unclear why system performance levels are being called <em>“Thermal Control Methods”</em>. The vague descriptions notwithstanding, I went ahead and tried out the different power modes to see their impact on battery life while the laptop was in sleep. Unsurprisingly, these didn’t make much of a difference in the battery drain.</p>
+<p>No information is given about what specific parameters are being modified, and it is also unclear why system performance levels are being called <em>“Thermal Control Methods”</em>. The vague descriptions notwithstanding, I went ahead and tried out the different power modes to see their impact on battery life while the laptop was in sleep. Unsurprisingly, <strong>these didn’t make much of a difference in the battery drain</strong>.</p>
 
-<p>In contrast, the <strong>Always On USB</strong> setting seemed much more promising.
+<p>In contrast, <strong>Always On USB</strong> seemed much more promising.
 <img src="/assets/img/Battery_Drain/pic4.png" alt="Always On USB Options" title="Fig. 4 - Always On USB Configuration" /></p>
 
-<p>This was Enabled by default. When enabled, power to the 3 USB ports is supplied even when the laptop goes into “low power states” – suspend/hibernate. This feature is very common and generally should not cause any major battery drain.</p>
+<p>This was <strong>Enabled</strong> by default. Consequently, power to the 3 USB ports is supplied even when the laptop goes into “low power states” – suspend/hibernate. This feature is very common and generally should not cause any major battery drain.</p>
 
 <p>However, disabling this feature seemed to magically fix the battery drain. Given the CPU itself works well on other laptops, the most promising suspect is a faulty ACPI (Advanced Configuration and Power Interface) driver, which supplies very high power to the USB ports even when the device is on standby.</p>
 
 <h2 id="tldr---the-problem-and-the-solution">TL;DR - The Problem and the Solution</h2>
 
-<p><strong>TODO: Put diagram to easily explain the power drain</strong></p>
+<p><img src="/assets/img/Battery_Drain/battery_drain.gif" alt="Battery Drain Animation" title="Battery Drain Representation" /></p>
 
-<p>In a nutshell, to allow phones/other devices to charge even when the laptop is asleep, the battery continues to supply power to the USB root hub. The problem with Lenovo’s hardware/ ACPI firmware is that the USB root hub consumes too much of power which causes the battery to drain rapidly.</p>
+<p>In a nutshell, to allow phones/other devices to charge even when the laptop is asleep, the battery continues to supply power to the USB root hub. The problem with Lenovo’s hardware/ ACPI firmware is that the USB root hub consumes too much power, causing the battery to drain rapidly.</p>
 
 <p>Disabling the power supply to the root hub prevents battery drain while the device is in low power states (sleep /hibernate) - consequently avoiding the gargantuan battery drain.</p>
 
 <h2 id="battery-drain-vs-system-performance-modes">Battery Drain Vs. System Performance Modes</h2>
-<p>Recall that the battery drain variation was negligible with different performance modes when <strong>Always On USB</strong> was set to <strong>Enabled</strong>, i.e., when the battery drain in Sleep was high. With the main issue of battery drain fixed, we can revisit this topic.</p>
+<p>Recall that the battery drain variation was negligible with different performance modes when <strong>Always On USB</strong> was <strong>Enabled</strong>, i.e., when the battery drain in Sleep was high. With the main issue of battery drain fixed, we can revisit this topic.</p>
 
 <h3 id="battery-drain-metrics">Battery Drain Metrics</h3>
-<p>The battery is first charged to 100% and maintained for atleast an hour to avoid random leaks/over-reporting.</p>
+<p>The battery is first charged to 100% and maintained for atleast an hour to avoid random leaks/under-reporting.</p>
 
 <h3 id="1-quiet-mode">1. Quiet Mode</h3>
 <p>Quiet Mode sees a drain of 4% over 6 hours to end at 96%.</p>
@@ -413,7 +428,7 @@ If properly supported, the power draw will become equivalent to the NVMe PS4 sta
 <p><img src="/assets/img/Battery_Drain/pic5.png" alt="Quiet Mode Battery Drain Graph" title="Fig. 5 - Quiet Mode: Battery Drain Graph" /></p>
 
 <h3 id="2-intelligent-mode">2. Intelligent Mode</h3>
-<p>Under intelligent mode, the battery drained to 97% - a decrease of 3% over 6 hours. Interestingly, the drain from 100 to 99% takes longer (around 3 hours) than in quiet mode (2 and a half hours).</p>
+<p>Under intelligent mode, the battery drained to 97% - a decrease of 3% over 6 hours. Interestingly, the drain from 100 to 99% takes longer (around 3 hours) than in quiet mode (2.5 hours).</p>
 
 <p><img src="/assets/img/Battery_Drain/pic6.png" alt="Intelligent Mode Battery Drain Graph" title="Fig. 6 - Intelligent Mode: Battery Drain Graph" /></p>
 
@@ -423,37 +438,44 @@ If properly supported, the power draw will become equivalent to the NVMe PS4 sta
 <p><img src="/assets/img/Battery_Drain/pic7.png" alt="Performance Mode Battery Drain Graph" title="Fig. 7 - Performance Mode: Battery Drain Graph" /></p>
 
 <h2 id="quantifying-the-performance-variation">Quantifying The Performance Variation</h2>
-<p><em>Is the battery drain,</em>
-<em>All in vain,</em>
+<p><em>Is the battery drain,</em><br />
+<em>All in vain,</em><br />
 <em>Or is it a necessary pain?</em></p>
 
 <p>We have established that the different performance modes have a tangible impact on battery drain. We will now look at how performance is affected by these performance modes.</p>
 
 <p>We will restrict ourselves to CPU performance alone, and not consider other factors like GPU performance, I/O performance, etc. This is because the performance of the system as a whole should change similar to the CPU when dealing with power and thermals. For example, it is very unlikely that we see a reduction in CPU performance and an increase in the performance of the GPU.</p>
 
-<p><strong>Benchmark Selection and Performance Logging</strong><br />
-We will be using <a href="https://www.maxon.net/en/cinebench">Cinebench R23</a> to benchmark the CPU. Cinebench has independent workloads for single threaded and multi threaded performance, both of which will be used by us.</p>
-
-<p>For logging the parameters of the CPU, we’ll make use of <a href="https://www.hwinfo.com/">HWiNFO</a> - the swiss army knife for logging data.</p>
-
-<p>Best possible airflow and temperature is maintained while running the benchmark to keep the comparison as fair as possible.</p>
+<div style="color: white; background-color: #001f68; border-style: double; border-width: 20px; border-radius: 10%;">
+<h3 style="text-align: center">Benchmark Selection and Performance Logging</h3>
+<p style="color: white;">  
+We will be using <a href="https://www.maxon.net/en/cinebench">Cinebench R23</a> to benchmark the CPU. Cinebench has independent workloads for single threaded and multi threaded performance, both of which will be used by us.
+</p>
+<p style="color: white;">
+For logging the parameters of the CPU, we'll make use of <a href="https://www.hwinfo.com">HWiNFO</a> - the swiss army knife for logging data.
+Best possible airflow and room temperature are maintained while running the benchmark. The tests were all done at night time when the ambient temperature was low, and provision for plenty of airflow around the vents of the laptop were provided to keep it an apples to apples comparison as far as possible.
+</p>
+<p></p>
+</div>
 
 <h2 id="cinebench-r23-results">Cinebench R23 Results</h2>
 
 <p><img src="/assets/img/Battery_Drain/pic8.png" alt="Cinebench R23 Scores" title="Fig. 8 - Cinebench R23 Scores" /></p>
 
-<p><img src="/assets/img/Battery_Drain/table1.png" alt="Cinebench R23 Scores - Table" title="Table 1 - Cinebench R23 Scores" /></p>
+<p><img src="/assets/img/Battery_Drain/table2.png" alt="Cinebench R23 Scores - Table" title="Table 2 - Cinebench R23 Scores" /></p>
 
-<p>Single core performance increases by about 5% as we move from Quiet mode to Intelligent mode. Multi core performance increases by 22%, implying that the single core gains are translating equally across all 4 cores leading to the 4x multi core gain.<br />
-Going from Intelligent mode to Performance mode, we see a 4.4% increase in single core performance. However, we only get 2% increase in multi core performance, which could be due to a number of factors - the all core frequency limit being reached, the max. power draw (15W TDP)being hit, and so on. To understand this better let’s look at the HWiNFO logs.</p>
+<p>Single core performance increases by about 5% as we move from Quiet mode to Intelligent mode. Multi core performance increases by 22%, implying that the single core gains are carried uniformly across all 4 cores leading to the 4x multi core gain.<br />
+Going from Intelligent mode to Performance mode, we see a 4.4% increase in single core performance. However, we only get 2% increase in multi core performance, which could be due to a number of factors - the all core frequency limit being reached, the max. power draw (15W TDP) being hit, and so on. To understand this better let’s look at the HWiNFO logs.</p>
 
 <h3 id="logs-and-analysis">Logs and Analysis</h3>
-<p>We’ll be looking at the clocks, voltages, temperature and power variation during the tests. The tests were all done at night time when the ambient temperature was low, and provision for plenty of airflow around the vents of the laptop were provided to keep it an apples to apples comparison as far as possible.</p>
+<p>We’ll be looking at the clocks, voltages, temperatures and power variations.</p>
 
 <h3 id="cinebench-r23---single-core">Cinebench R23 - Single Core</h3>
 
+<p>The single core benchmark works by alternately loading each CPU core with the rendering workload.</p>
+
 <h3 id="maximum-single-core-frequency">Maximum Single Core Frequency</h3>
-<p>Cinebench’s single core benchmark works by alternately loading each core with the render workload. We hence take maximum clock frequency at any given time as the parameter, since the other cores are idling.</p>
+<p>Since only one CPU core is fully loaded at a time, we can safely consider the rest of the cores to be idling. We hence take maximum clock frequency at any given time as the parameter.</p>
 
 <p><img src="/assets/img/Battery_Drain/pic9.png" alt="Max. Frequency - Quiet" title="Fig. 9 - Max. Frequency in Quiet Mode" /></p>
 
@@ -461,7 +483,7 @@ Going from Intelligent mode to Performance mode, we see a 4.4% increase in singl
 
 <p><img src="/assets/img/Battery_Drain/pic11.png" alt="Max. Frequency - Performance" title="Fig. 11 - Max. Frequency in Performance Mode" /></p>
 
-<p>We see that the max clock move between between 3500 and 3700 MHz for all 3 modes, though the dips below 3500 are much less pronounced for performance mode.</p>
+<p>We see that the max clock move between between 3500 and 3700 MHz for all 3 modes, though the dips below 3500 are much less pronounced in performance mode.</p>
 
 <h3 id="vcore">VCore</h3>
 <p>The core voltage is the actual voltage supplied to the CPU by the voltage regulator. The greater the voltage, the more the performance headroom.</p>
@@ -472,7 +494,8 @@ Going from Intelligent mode to Performance mode, we see a 4.4% increase in singl
 
 <p><img src="/assets/img/Battery_Drain/pic14.png" alt="Core Voltage - Performance" title="Fig. 14 - Core Voltage in Performance Mode" /></p>
 
-<p>In Quiet Mode, the Vcore variesThe core voltage is the actual voltage supplied to the CPU by the voltage regulator. The greater the voltage, the more the performance headroovaries between 1.2 and 1.24V, whereas in Performance mode it remains relatively steady at 1.22V. This explains the stabler clocks observed in the previous section.</p>
+<p>In Quiet Mode, the Vcore varies between 1.15 and 1.18V for half of the test, and then drops to 1.12-1.15V. This may have been done in order to keep the laptop “quiet” even when the temperature increased. Since the fans can’t spin too fast (because the laptop won’t remain “quiet”) the voltage is instead reduced to control the temperature.<br />
+In intelligent mode, the Vcore varies between 1.2 and 1.24V, whereas in Performance mode it remains relatively steady at 1.22V. This explains the stabler clocks observed in the previous section.</p>
 
 <h3 id="power-draw">Power Draw</h3>
 <p>Power drawn is closely related to the voltage supplied. The greater the power supplied, the greater the clocking/performance headroom.</p>
@@ -483,11 +506,23 @@ Going from Intelligent mode to Performance mode, we see a 4.4% increase in singl
 
 <p><img src="/assets/img/Battery_Drain/pic17.png" alt="Power Draw - Performance" title="Fig. 17 - Power Draw in Performance Mode" /></p>
 
-<p>Surprisingly, Quiet Mode consumes the maximum power for the first half of the test, crossing 7W on many occasions, before dropping to around around 6.5W. This explains the drop in the voltage and also the lower score.<br />
+<p>Surprisingly, Quiet Mode consumes the maximum power for the first half of the test, crossing 7W on many occasions, before dropping to around around 6.5W. This correlates with the drop in the voltage and the lower score. <br />
 The Performance and Intelligent mode power draws are very similar with the performance mode being slightly more steady.</p>
 
+<div class="quick-note" style="color: white; background-color: #001f68; border-style: double; border-width: 20px; border-radius: 10%;">
+<h3 style="text-align: center">TDP vs Power consumed</h3>
+<p style="color: white;">
+You may have noticed that the actual power consumed by the CPU is nowhere near the "TDP" rating of 15 W.<br />  
+TDP stands for <a href="https://en.wikipedia.org/wiki/Thermal_design_power">Thermal Design Power</a>. This is the absolute maximum amount of <span style="font-weight: bold;">heat (resistive power)</span> that can be generated by the CPU, and the cooling system design should be targeted at the TDP. <br />
+This extreme power dissipation is very difficult to reproduce, and hence is generally rarely observed, especially in thin and light laptops.<br />
+
+Power consumed on the other hand is the actual power drawn by the CPU measure by the power sensors (which are logged by HWiNFO).
+</p>
+<p></p>
+</div>
+
 <h3 id="cpu-temperature">CPU Temperature</h3>
-<p>Temperature is another parameter closely connected with the power, clock, and cooling mechanisms. If the temperature is too high, the CPU starts throttling and hence performance is lost.</p>
+<p>Temperature is another parameter closely connected with the power, clock, and cooling mechanisms. If the temperature is too high, the CPU starts throttling and hence performance is reduced.</p>
 
 <p><img src="/assets/img/Battery_Drain/pic18.png" alt="CPU Temperature - Quiet" title="Fig. 18 - CPU Temperature in Quiet Mode" /></p>
 
@@ -498,7 +533,7 @@ The Performance and Intelligent mode power draws are very similar with the perfo
 <p>As expected, Quiet Mode has the highest temperature thanks to being “Quiet” and not using the cooling system. Intelligent mode is relatively cooler but occasionally spikes up. Performance mode, as expected, has the best cooling performance.</p>
 
 <h3 id="cinebench-r23---multi-core">Cinebench R23 - Multi Core</h3>
-<p>In contrast to single core performance, multi core benchmarking introduces many more constraints on the maximum clock attainable, power available, and so on. We’ll now look at the same parameters logged in the Cinebench multi core benchmark. The test conditions remain the same as before.</p>
+<p>In contrast to single core performance, the multi core benchmark introduces many more constraints on the maximum clock attainable, power available, and so on. We’ll now look at the same parameters logged in the Cinebench multi core benchmark. The test conditions remain the same as before.</p>
 
 <h3 id="clock-frequencies">Clock Frequencies</h3>
 <p>Since all the cores are loaded we’ll be looking at the frequency characteristic for each core.</p>
@@ -509,7 +544,7 @@ The Performance and Intelligent mode power draws are very similar with the perfo
 
 <p><img src="/assets/img/Battery_Drain/pic23.png" alt="Frequencies - Performance" title="Fig. 23 - Frequencies in Performance Mode" /></p>
 
-<p>In Quiet Mode, all 4 cores initially run at around 2500MHz, before throttling to just above 2100 MHz. The core clocks go all over the place as the test completes, this could be because the cores which have completed rendering go to idle, which gives other cores more breathing space.<br />
+<p>In Quiet Mode, all 4 cores initially run at around 2500MHz, before throttling to just above 2100 MHz. The core clocks go all over the place as the test completes. This could be because some cores which have completed rendering go to idle, which gives the remaining cores more breathing space.<br />
 The clocks in Intelligent mode are initially around 2900MHz, before falling to 2800 MHz. In Performance mode, the clocks consistently remain around 2900MHz. This 100MHz clock difference accounts for the relatively small gap seen in the benchmark score. The almost 800MHz delta between Quiet and Intelligent/Performance Modes explains the massive difference in score.</p>
 
 <h3 id="vcore-1">VCore</h3>
@@ -522,7 +557,7 @@ The clocks in Intelligent mode are initially around 2900MHz, before falling to 2
 
 <p><img src="/assets/img/Battery_Drain/pic26.png" alt="Core Voltage - Performance" title="Fig. 26 - Core Voltage in Performance Mode" /></p>
 
-<p>In Quiet Mode, the voltage remains consistently below 0.9V at around 0.85V until the end, when it spikes up to 1.1V. This corresponds to the frequency spikes observed towards the end as well.</p>
+<p>In Quiet Mode, the voltage remains consistently below 0.9V at around 0.85V until the end, when it spikes up to 1.1V. This corresponds to the frequency spikes observed towards the end.</p>
 
 <p>Intelligent Mode witnesses the voltage moving around 0.96V before falling to 0.92V around 6 minutes into the Benchmark. This corresponds to the frequency drop seen above.</p>
 
@@ -538,15 +573,15 @@ The clocks in Intelligent mode are initially around 2900MHz, before falling to 2
 
 <p><img src="/assets/img/Battery_Drain/pic29.png" alt="Power Draw - Performance" title="Fig. 29 - Power Draw in Performance Mode" /></p>
 
-<p>In Quiet Mode, the power draw starts at 8W, then falls to 6.5W, corresponding to the frequency drop. The second drop in power draw towards the end accompanying the clock and voltage spikes supports the theory that some cores are completing ahead of others in this power mode, and consequently the power draw reduces as they go to idle.</p>
+<p>In Quiet Mode, the power draw starts at 8W, then falls to 6.5W, corresponding to the frequency drop. The second drop in power draw towards the end accompanying the clock and voltage spikes supports the theory that some cores are completing ahead of others, and consequently the power draw reduces as they go to idle.</p>
 
-<p>In Intelligent mode, power draw remains at around 11W before a drop to 10W corresponding to the frequency and voltage drops seen earlier.</p>
+<p>In Intelligent mode, power draw stays at around 11W before a drop to 10W corresponding to the frequency and voltage drops seen earlier.</p>
 
 <p>Performance Mode does not have any major variation in power draw, and almost consistently stays at 11W.</p>
 
 <h3 id="cpu-temperature-1">CPU Temperature</h3>
 
-<p>Again, the cPU temperature measurement remains same across single core and multi core benchmarks.</p>
+<p>Again, the CPU temperature measurement remains same across single core and multi core benchmarks.</p>
 
 <p><img src="/assets/img/Battery_Drain/pic30.png" alt="CPU Temperature - Quiet" title="Fig. 30 - CPU Temperature in Quiet Mode" /></p>
 
@@ -560,10 +595,10 @@ The clocks in Intelligent mode are initially around 2900MHz, before falling to 2
 
 <h3 id="conclusion">Conclusion</h3>
 <p>To answer the question we previously asked ourselves – no, the battery drain with performance mode is not completely in vain :). However, it is worth noting that the multi core performance uplift from Intelligent to Performance modes isn’t really worth the reduced battery life while in sleep.<br />
-On the other hand, while Quiet Mode gives the longest battery life while sleeping, it has serious impacts on the performance and heating issues due to the cooling system being inadequately powered.<br />
+On the other hand, while Quiet Mode gives pretty good battery life while sleeping, it has serious impacts on the performance and heating issues due to the cooling system being inadequately powered.<br />
 Intelligent mode seems to be a balance of both that should suit the average end user.</p>
 
-<p>Now coming to the issue with which we began – the massive battery drain caused by the USB charging while sleeping. Why have all USB ports been enabled with this feature, and why can’t it be selectively applied to retain the ability to use the USB port while the laptop sleeps? Why has it been enabled by default by the manufacturer ? Why doesn’t it get disabled when we set low power consumption profile in Control Panel ?</p>
+<p>Now coming to the issue with which we began – the massive battery drain caused by <strong>Always On USB</strong>. Why have all USB ports been enabled with this feature, and why can’t it be selectively applied to retain the ability to use the USB port while the laptop sleeps? Why has it been enabled by default by the manufacturer ? Why doesn’t it get disabled when we set low power consumption profile in Control Panel ?</p>
 
 <p>Food for thought/ Instructions worth processing, no ?</p>
 
@@ -581,29 +616,29 @@ Intelligent mode seems to be a balance of both that should suit the average end 
                         
                         
                             <li>
-                                <a href="/the-quick-brown-fox-jumps-over-a-lazy-dog/">
+                                <a href="/Graphics-Pipeline-Overview/">
                                     
-                                        <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1506079212/jekflix-capa_vfhuzh.png">
+                                        <img src="/assets/img/Gfx_Pipeline/graphics_background_1.jpg">
                                     
-                                    <h3>The quick brown fox jumps over a lazy dog</h3>
+                                    <h3>Graphics Pipeline Overview</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/far-far-away-behind-the-word-mountains/">
+                                <a href="/RX-560X-Overclocking-Guide/">
                                     
-                                        <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821648/theme5_wmutla.jpg">
+                                        <img src="/assets/img/RX560X_OC/homescreen_thumb.jpg">
                                     
-                                    <h3>Far far away behind the word mountains</h3>
+                                    <h3>RX 560X Overclocking Guide</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/trust-me-it-will-work/">
+                                <a href="/CPUs-The-Computing-Workhorses/">
                                     
-                                        <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821648/theme1_eoyjtl.jpg">
+                                        <img src="/assets/img/off.jpg">
                                     
-                                    <h3>Trust me, it will work</h3>
+                                    <h3>CPUs - The Magic Behind The Machines</h3>
                                 </a>
                             </li>
                         
@@ -615,7 +650,7 @@ Intelligent mode seems to be a balance of both that should suit the average end 
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="14">
+            <div class="time-bar" data-minutes="15">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -635,13 +670,13 @@ Intelligent mode seems to be a balance of both that should suit the average end 
         </div>
     </div>
     
-    <a href="/far-far-away-behind-the-word-mountains/" class="post-preview">
+    <a href="/CPUs-The-Computing-Workhorses/" class="post-preview">
         <div class="image">
             
-                <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821648/theme5_wmutla.jpg">
+                <img src="/assets/img/off.jpg">
             
         </div>
-        <h3 class="title">Far far away behind the word mountains</h3>
+        <h3 class="title">CPUs - The Magic Behind The Machines</h3>
     </a>
 </div>
 
@@ -818,13 +853,28 @@ Intelligent mode seems to be a balance of both that should suit the average end 
             "name": "No Lane - No Gain; No Strain - No Battery Drain!",
             "headline": "",
             "description": "A not so brief account of my tryst with laptop power management",
-            "image": "",
+            "image": "/assets/img/Battery_Drain/battery_drain_background.jpeg",
             "url": "/no-lane,-no-gain,-no-strain,-no-battery-drain/",
-            "articleBody": "Background
+            "articleBody": "
+    Contents
+    
+        Background
+        The Investigation
+        TL;DR - The Problem &amp;amp; The Solution
+        Battery Drain Vs. System Performance Modes
+        Quantifying The Performance Variation
+        Cinebench R23 Results
+        Logs And Analysis: Cinebench R23 - Single Core Benchmark
+        Logs And Analysis: Cinebench R23 - Multi Core Benchmark
+        Conclusion
+    
+
+
+Background
 
 A couple of laptops at home were being plagued by the most dreaded infection (not COVID; that hasn’t manifested as a computer virus yet!) – the battery would drain incredibly fast when they were sleeping – it would completely discharge from 100% in less than a day !
 
-TODO: (Add table here) -&amp;gt; Laptop Name, CPU (Microarchitecture), Battery Drain
+
 
 The first laptop was an Ideapad S340-14API powered by the Ryzen 5 3500U (Zen + architecture), while the other was an Asus Vivobook 14 with a beastly Ryzen 7 4700U (Zen 2 architecture) under the hood.
 
@@ -832,9 +882,7 @@ The Investigation
 My first suspect was the CPU support for D3HOT. D3HOT is a PCIe low power state which is entered in sleep by the endpoint devices (all devices connected to the PCIe bus).
 If properly supported, the power draw will become equivalent to the NVMe PS4 state for the SSDs (few hundred milliwatts). D3HOT support in SSDs was required by Microsoft and Intel’s introduction of Modern Standby, which is what powers the ubiquitous “fast boot” technology found in Windows 8 and 10. Since Intel was involved in the development of D3HOT, AMD’s support of D3HOT came into question.
 
-However, battery drain in a friend’s ROG Zephyrus G14 with a Ryzen 7 4800H (also with Zen 2 arch) was perfectly normal, indicating that there was nothing missing with AMD’s implementation of D3HOT.
-
-I then began to dig in to the BIOS on each laptop. The Asus’s BIOS was unexpectedly lean and barely had any settings in it, let alone power management! Luckily enough a Windows Update seemed to fix the issue on the Asus Laptop.
+However, battery drain in a friend’s ROG Zephyrus G14 with a Ryzen 7 4800HS (also Zen 2 based) was perfectstyle=”color: white;”y settings in it, let alone power management! Luckily enough a Windows Update seemed to fix the issue on the Asus Laptop.
 
 The Lenovo BIOS was more generous with its settings, though still pretty limited with what one could do. Nevertheless, 2 settings looked interesting – System Performance Mode and Always On USB.
 
@@ -853,26 +901,26 @@ System Performance Mode has 3 possible configurations -
 
 No information is given about what specific parameters are being modified, and it is also unclear why system performance levels are being called “Thermal Control Methods”. The vague descriptions notwithstanding, I went ahead and tried out the different power modes to see their impact on battery life while the laptop was in sleep. Unsurprisingly, these didn’t make much of a difference in the battery drain.
 
-In contrast, the Always On USB setting seemed much more promising.
+In contrast, Always On USB seemed much more promising.
 
 
-This was Enabled by default. When enabled, power to the 3 USB ports is supplied even when the laptop goes into “low power states” – suspend/hibernate. This feature is very common and generally should not cause any major battery drain.
+This was Enabled by default. Consequently, power to the 3 USB ports is supplied even when the laptop goes into “low power states” – suspend/hibernate. This feature is very common and generally should not cause any major battery drain.
 
 However, disabling this feature seemed to magically fix the battery drain. Given the CPU itself works well on other laptops, the most promising suspect is a faulty ACPI (Advanced Configuration and Power Interface) driver, which supplies very high power to the USB ports even when the device is on standby.
 
 TL;DR - The Problem and the Solution
 
-TODO: Put diagram to easily explain the power drain
 
-In a nutshell, to allow phones/other devices to charge even when the laptop is asleep, the battery continues to supply power to the USB root hub. The problem with Lenovo’s hardware/ ACPI firmware is that the USB root hub consumes too much of power which causes the battery to drain rapidly.
+
+In a nutshell, to allow phones/other devices to charge even when the laptop is asleep, the battery continues to supply power to the USB root hub. The problem with Lenovo’s hardware/ ACPI firmware is that the USB root hub consumes too much power, causing the battery to drain rapidly.
 
 Disabling the power supply to the root hub prevents battery drain while the device is in low power states (sleep /hibernate) - consequently avoiding the gargantuan battery drain.
 
 Battery Drain Vs. System Performance Modes
-Recall that the battery drain variation was negligible with different performance modes when Always On USB was set to Enabled, i.e., when the battery drain in Sleep was high. With the main issue of battery drain fixed, we can revisit this topic.
+Recall that the battery drain variation was negligible with different performance modes when Always On USB was Enabled, i.e., when the battery drain in Sleep was high. With the main issue of battery drain fixed, we can revisit this topic.
 
 Battery Drain Metrics
-The battery is first charged to 100% and maintained for atleast an hour to avoid random leaks/over-reporting.
+The battery is first charged to 100% and maintained for atleast an hour to avoid random leaks/under-reporting.
 
 1. Quiet Mode
 Quiet Mode sees a drain of 4% over 6 hours to end at 96%.
@@ -880,7 +928,7 @@ Quiet Mode sees a drain of 4% over 6 hours to end at 96%.
 
 
 2. Intelligent Mode
-Under intelligent mode, the battery drained to 97% - a decrease of 3% over 6 hours. Interestingly, the drain from 100 to 99% takes longer (around 3 hours) than in quiet mode (2 and a half hours).
+Under intelligent mode, the battery drained to 97% - a decrease of 3% over 6 hours. Interestingly, the drain from 100 to 99% takes longer (around 3 hours) than in quiet mode (2.5 hours).
 
 
 
@@ -898,12 +946,17 @@ We have established that the different performance modes have a tangible impact 
 
 We will restrict ourselves to CPU performance alone, and not consider other factors like GPU performance, I/O performance, etc. This is because the performance of the system as a whole should change similar to the CPU when dealing with power and thermals. For example, it is very unlikely that we see a reduction in CPU performance and an increase in the performance of the GPU.
 
+
 Benchmark Selection and Performance Logging
+  
 We will be using Cinebench R23 to benchmark the CPU. Cinebench has independent workloads for single threaded and multi threaded performance, both of which will be used by us.
 
-For logging the parameters of the CPU, we’ll make use of HWiNFO - the swiss army knife for logging data.
 
-Best possible airflow and temperature is maintained while running the benchmark to keep the comparison as fair as possible.
+For logging the parameters of the CPU, we'll make use of HWiNFO - the swiss army knife for logging data.
+Best possible airflow and room temperature are maintained while running the benchmark. The tests were all done at night time when the ambient temperature was low, and provision for plenty of airflow around the vents of the laptop were provided to keep it an apples to apples comparison as far as possible.
+
+
+
 
 Cinebench R23 Results
 
@@ -911,16 +964,18 @@ Cinebench R23 Results
 
 
 
-Single core performance increases by about 5% as we move from Quiet mode to Intelligent mode. Multi core performance increases by 22%, implying that the single core gains are translating equally across all 4 cores leading to the 4x multi core gain.
-Going from Intelligent mode to Performance mode, we see a 4.4% increase in single core performance. However, we only get 2% increase in multi core performance, which could be due to a number of factors - the all core frequency limit being reached, the max. power draw (15W TDP)being hit, and so on. To understand this better let’s look at the HWiNFO logs.
+Single core performance increases by about 5% as we move from Quiet mode to Intelligent mode. Multi core performance increases by 22%, implying that the single core gains are carried uniformly across all 4 cores leading to the 4x multi core gain.
+Going from Intelligent mode to Performance mode, we see a 4.4% increase in single core performance. However, we only get 2% increase in multi core performance, which could be due to a number of factors - the all core frequency limit being reached, the max. power draw (15W TDP) being hit, and so on. To understand this better let’s look at the HWiNFO logs.
 
 Logs and Analysis
-We’ll be looking at the clocks, voltages, temperature and power variation during the tests. The tests were all done at night time when the ambient temperature was low, and provision for plenty of airflow around the vents of the laptop were provided to keep it an apples to apples comparison as far as possible.
+We’ll be looking at the clocks, voltages, temperatures and power variations.
 
 Cinebench R23 - Single Core
 
+The single core benchmark works by alternately loading each CPU core with the rendering workload.
+
 Maximum Single Core Frequency
-Cinebench’s single core benchmark works by alternately loading each core with the render workload. We hence take maximum clock frequency at any given time as the parameter, since the other cores are idling.
+Since only one CPU core is fully loaded at a time, we can safely consider the rest of the cores to be idling. We hence take maximum clock frequency at any given time as the parameter.
 
 
 
@@ -928,7 +983,7 @@ Cinebench’s single core benchmark works by alternately loading each core with 
 
 
 
-We see that the max clock move between between 3500 and 3700 MHz for all 3 modes, though the dips below 3500 are much less pronounced for performance mode.
+We see that the max clock move between between 3500 and 3700 MHz for all 3 modes, though the dips below 3500 are much less pronounced in performance mode.
 
 VCore
 The core voltage is the actual voltage supplied to the CPU by the voltage regulator. The greater the voltage, the more the performance headroom.
@@ -939,7 +994,8 @@ The core voltage is the actual voltage supplied to the CPU by the voltage regula
 
 
 
-In Quiet Mode, the Vcore variesThe core voltage is the actual voltage supplied to the CPU by the voltage regulator. The greater the voltage, the more the performance headroovaries between 1.2 and 1.24V, whereas in Performance mode it remains relatively steady at 1.22V. This explains the stabler clocks observed in the previous section.
+In Quiet Mode, the Vcore varies between 1.15 and 1.18V for half of the test, and then drops to 1.12-1.15V. This may have been done in order to keep the laptop “quiet” even when the temperature increased. Since the fans can’t spin too fast (because the laptop won’t remain “quiet”) the voltage is instead reduced to control the temperature.
+In intelligent mode, the Vcore varies between 1.2 and 1.24V, whereas in Performance mode it remains relatively steady at 1.22V. This explains the stabler clocks observed in the previous section.
 
 Power Draw
 Power drawn is closely related to the voltage supplied. The greater the power supplied, the greater the clocking/performance headroom.
@@ -950,11 +1006,23 @@ Power drawn is closely related to the voltage supplied. The greater the power su
 
 
 
-Surprisingly, Quiet Mode consumes the maximum power for the first half of the test, crossing 7W on many occasions, before dropping to around around 6.5W. This explains the drop in the voltage and also the lower score.
+Surprisingly, Quiet Mode consumes the maximum power for the first half of the test, crossing 7W on many occasions, before dropping to around around 6.5W. This correlates with the drop in the voltage and the lower score. 
 The Performance and Intelligent mode power draws are very similar with the performance mode being slightly more steady.
 
+
+TDP vs Power consumed
+
+You may have noticed that the actual power consumed by the CPU is nowhere near the &quot;TDP&quot; rating of 15 W.  
+TDP stands for Thermal Design Power. This is the absolute maximum amount of heat (resistive power) that can be generated by the CPU, and the cooling system design should be targeted at the TDP. 
+This extreme power dissipation is very difficult to reproduce, and hence is generally rarely observed, especially in thin and light laptops.
+
+Power consumed on the other hand is the actual power drawn by the CPU measure by the power sensors (which are logged by HWiNFO).
+
+
+
+
 CPU Temperature
-Temperature is another parameter closely connected with the power, clock, and cooling mechanisms. If the temperature is too high, the CPU starts throttling and hence performance is lost.
+Temperature is another parameter closely connected with the power, clock, and cooling mechanisms. If the temperature is too high, the CPU starts throttling and hence performance is reduced.
 
 
 
@@ -965,7 +1033,7 @@ Temperature is another parameter closely connected with the power, clock, and co
 As expected, Quiet Mode has the highest temperature thanks to being “Quiet” and not using the cooling system. Intelligent mode is relatively cooler but occasionally spikes up. Performance mode, as expected, has the best cooling performance.
 
 Cinebench R23 - Multi Core
-In contrast to single core performance, multi core benchmarking introduces many more constraints on the maximum clock attainable, power available, and so on. We’ll now look at the same parameters logged in the Cinebench multi core benchmark. The test conditions remain the same as before.
+In contrast to single core performance, the multi core benchmark introduces many more constraints on the maximum clock attainable, power available, and so on. We’ll now look at the same parameters logged in the Cinebench multi core benchmark. The test conditions remain the same as before.
 
 Clock Frequencies
 Since all the cores are loaded we’ll be looking at the frequency characteristic for each core.
@@ -976,7 +1044,7 @@ Since all the cores are loaded we’ll be looking at the frequency characteristi
 
 
 
-In Quiet Mode, all 4 cores initially run at around 2500MHz, before throttling to just above 2100 MHz. The core clocks go all over the place as the test completes, this could be because the cores which have completed rendering go to idle, which gives other cores more breathing space.
+In Quiet Mode, all 4 cores initially run at around 2500MHz, before throttling to just above 2100 MHz. The core clocks go all over the place as the test completes. This could be because some cores which have completed rendering go to idle, which gives the remaining cores more breathing space.
 The clocks in Intelligent mode are initially around 2900MHz, before falling to 2800 MHz. In Performance mode, the clocks consistently remain around 2900MHz. This 100MHz clock difference accounts for the relatively small gap seen in the benchmark score. The almost 800MHz delta between Quiet and Intelligent/Performance Modes explains the massive difference in score.
 
 VCore
@@ -989,7 +1057,7 @@ As previously stated, the core voltage is the actual voltage supplied to the CPU
 
 
 
-In Quiet Mode, the voltage remains consistently below 0.9V at around 0.85V until the end, when it spikes up to 1.1V. This corresponds to the frequency spikes observed towards the end as well.
+In Quiet Mode, the voltage remains consistently below 0.9V at around 0.85V until the end, when it spikes up to 1.1V. This corresponds to the frequency spikes observed towards the end.
 
 Intelligent Mode witnesses the voltage moving around 0.96V before falling to 0.92V around 6 minutes into the Benchmark. This corresponds to the frequency drop seen above.
 
@@ -1005,15 +1073,15 @@ Just like VCore, the power draw metrics do not change from Single Core to Multi 
 
 
 
-In Quiet Mode, the power draw starts at 8W, then falls to 6.5W, corresponding to the frequency drop. The second drop in power draw towards the end accompanying the clock and voltage spikes supports the theory that some cores are completing ahead of others in this power mode, and consequently the power draw reduces as they go to idle.
+In Quiet Mode, the power draw starts at 8W, then falls to 6.5W, corresponding to the frequency drop. The second drop in power draw towards the end accompanying the clock and voltage spikes supports the theory that some cores are completing ahead of others, and consequently the power draw reduces as they go to idle.
 
-In Intelligent mode, power draw remains at around 11W before a drop to 10W corresponding to the frequency and voltage drops seen earlier.
+In Intelligent mode, power draw stays at around 11W before a drop to 10W corresponding to the frequency and voltage drops seen earlier.
 
 Performance Mode does not have any major variation in power draw, and almost consistently stays at 11W.
 
 CPU Temperature
 
-Again, the cPU temperature measurement remains same across single core and multi core benchmarks.
+Again, the CPU temperature measurement remains same across single core and multi core benchmarks.
 
 
 
@@ -1027,14 +1095,14 @@ Such throttling is not seen in Performance mode, with the temperature rarely cro
 
 Conclusion
 To answer the question we previously asked ourselves – no, the battery drain with performance mode is not completely in vain :). However, it is worth noting that the multi core performance uplift from Intelligent to Performance modes isn’t really worth the reduced battery life while in sleep.
-On the other hand, while Quiet Mode gives the longest battery life while sleeping, it has serious impacts on the performance and heating issues due to the cooling system being inadequately powered.
+On the other hand, while Quiet Mode gives pretty good battery life while sleeping, it has serious impacts on the performance and heating issues due to the cooling system being inadequately powered.
 Intelligent mode seems to be a balance of both that should suit the average end user.
 
-Now coming to the issue with which we began – the massive battery drain caused by the USB charging while sleeping. Why have all USB ports been enabled with this feature, and why can’t it be selectively applied to retain the ability to use the USB port while the laptop sleeps? Why has it been enabled by default by the manufacturer ? Why doesn’t it get disabled when we set low power consumption profile in Control Panel ?
+Now coming to the issue with which we began – the massive battery drain caused by Always On USB. Why have all USB ports been enabled with this feature, and why can’t it be selectively applied to retain the ability to use the USB port while the laptop sleeps? Why has it been enabled by default by the manufacturer ? Why doesn’t it get disabled when we set low power consumption profile in Control Panel ?
 
 Food for thought/ Instructions worth processing, no ?
 ",
-            "wordcount": "2614",
+            "wordcount": "2825",
             "inLanguage": "en",
             "dateCreated": "2021-01-31/",
             "datePublished": "2021-01-31/",
