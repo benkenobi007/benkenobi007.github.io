@@ -322,13 +322,6 @@
         </url>
     
         <url>
-            <loc>/CPUs-The-Computing-Workhorses/</loc>
-            <changefreq>weekly</changefreq>
-            <priority>0.8</priority>
-            <lastmod>2020-11-09</lastmod>
-        </url>
-    
-        <url>
             <loc>/RX-560X-Overclocking-Guide/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

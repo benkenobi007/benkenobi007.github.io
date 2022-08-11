@@ -5,8 +5,8 @@
     <description>The Techoot (or TecH007) is a blog about computers mainly targeted at those with little to no prior technical knowledge.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 07 Feb 2021 17:19:03 +0530</pubDate>
-    <lastBuildDate>Sun, 07 Feb 2021 17:19:03 +0530</lastBuildDate>
+    <pubDate>Thu, 11 Aug 2022 18:20:55 +0530</pubDate>
+    <lastBuildDate>Thu, 11 Aug 2022 18:20:55 +0530</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -23,26 +23,6 @@
         <category>life</category>
         
         <category>hardware</category>
-      </item>
-    
-      <item>
-        <title>CPUs - The Magic Behind The Machines</title>
-        <description>&lt;p&gt;I’m sure we’ve all come across the terms “CPU” and “processor”, especially when looking to buy a computer, and increasingly while buying smartphones as well. However, these inconspicuous feats of engineering are far more versatile than most people know. For instance, how many of the following devices do you think requires a CPU ? &lt;strong&gt;Add pictures here&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Washing Machine&lt;/li&gt; &lt;li&gt;Car&lt;/li&gt; &lt;li&gt;Induction Cooker&lt;/li&gt; &lt;li&gt;Fire alarm&lt;/li&gt; &lt;li&gt;Microwave Oven&lt;/li&gt; &lt;li&gt;Refrigerator&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If your answer is - &lt;strong&gt;all of the above&lt;/strong&gt;, then congratulations ! While they certainly do not need a CPU for their basic functioning, all of the advanced features which enhance...</description>
-        <pubDate>Mon, 09 Nov 2020 03:50:41 +0530</pubDate>
-        <link>/CPUs-The-Computing-Workhorses/</link>
-        <guid isPermaLink="true">/CPUs-The-Computing-Workhorses/</guid>
-        
-        <category>Processors,</category>
-        
-        <category>Central</category>
-        
-        <category>Processing</category>
-        
-        <category>Unit,</category>
-        
-        <category>CPU</category>
-        
-        <category>Hardware</category>
       </item>
     
       <item>
