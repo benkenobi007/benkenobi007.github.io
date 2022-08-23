@@ -5,8 +5,8 @@
     <description>The Techoot (or TecH007) is a blog about computers mainly targeted at those with little to no prior technical knowledge.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Aug 2022 01:52:39 +0530</pubDate>
-    <lastBuildDate>Tue, 23 Aug 2022 01:52:39 +0530</lastBuildDate>
+    <pubDate>Tue, 23 Aug 2022 22:34:30 +0530</pubDate>
+    <lastBuildDate>Tue, 23 Aug 2022 22:34:30 +0530</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -47,7 +47,7 @@
     
       <item>
         <title>Meltdown - How and Why</title>
-        <description>&lt;p&gt;Let us start by exploring the key concepts required:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Out of Order/ Speculative execution&lt;/li&gt; &lt;li&gt;Virtual Memory and memory mapping&lt;/li&gt; &lt;li&gt;Memory Protection&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;out-of-order-execution&quot;&gt;Out of Order Execution&lt;/h2&gt; &lt;p&gt;Whenever we run a program, we expect that the CPU executes the instructions line by line. Indeed, the entire field of computer software relies on this simplifying assumption of in-order execution by the CPU. From the perspective of the CPU though, this would result in an incredible waste of power and computation.&lt;/p&gt; &lt;p&gt;For example, let us say we want to bake a cake and prepare a salad. If we were to follow...</description>
+        <description>&lt;p&gt;Let us start by exploring the key concepts required:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Out of Order/ Speculative execution&lt;/li&gt; &lt;li&gt;Virtual Addresses and memory mapping&lt;/li&gt; &lt;li&gt;Memory Protection&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;out-of-order-execution&quot;&gt;Out of Order Execution&lt;/h2&gt; &lt;p&gt;Whenever we run a program, we expect that the CPU executes the instructions line by line. Indeed, the entire field of computer software relies on this simplifying assumption of in-order execution by the CPU. From the perspective of the CPU though, this would result in an incredible waste of power and computation.&lt;/p&gt; &lt;p&gt;For example, let us say we want to bake a cake and prepare a salad. If we were to follow...</description>
         <pubDate>Mon, 05 Aug 2019 22:30:49 +0530</pubDate>
         <link>/meltdown-how-and-why/</link>
         <guid isPermaLink="true">/meltdown-how-and-why/</guid>
